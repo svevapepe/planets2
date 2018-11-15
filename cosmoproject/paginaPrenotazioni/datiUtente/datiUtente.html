@@ -10,7 +10,7 @@
 
   
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/signin.css" rel="stylesheet" type="text/css">
+    <link href="css/datiUtente.css" rel="stylesheet" type="text/css">
     <link href="../../css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
@@ -62,55 +62,39 @@
 
     <section id="contact" class="bg-transparent">
               <div class="col-lg-12  text-center text-warning">
-                <h2 class="section text-uppercase">Scegli la tua meta</h2>
+                <h2 class="section text-uppercase">Inserisci i tuoi dati</h2>
             </div>
     </section>
-        <form action="../datiUtente/datiUtente.html" class="form-signin " align="center"method="POST" name="myForm" onSubmit="return validaForm()">
+        <form action="https://www.diag.uniroma1.it/~rosati/lw/" class="form-signin " align="center"method="POST" name="myForm" onSubmit="return validaForm()">
             
             <div class="input-group mb-1">
                     <div class="input-group-prepend">
-                      <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class="fa fa-ticket"></i>&nbsp;N° di biglietti</span>
+                      <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class="material-icons">person</i>&nbsp;Nome</span>
                     </div>
-                    <input type="text" class="form-control form-control btn-outline-secondary:hovert text-dark font-weight-bold" maxlength="2" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required autofocus>
+                    <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required auto>
             </div>
             <div class="input-group mb-4">
                     <div class="input-group-prepend">
-                      <span class="input-group-text text-dark font-weight-bold" id=""><i class='far fa-calendar-alt'></i>&nbsp;Data partenza e arrivo</span>
+                      <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class="material-icons">person</i>&nbsp;Cognome</span>
                     </div>
-                    <input type="date" class="form-control btn-outline-secondary:hover text-dark font-weight-bold" required>
-                    <input type="date" class="form-control btn-outline-secondary:hover text-dark font-weight-bold">
+                    <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required autofocus>
             </div>
-            
-            <select class="custom-select font-weight-bold mb-1" name="inputPartenza" required>
-                <option value="nessuno" disabled selected hidden>Spazioporto di partenza</option>
-                <option value="Mercurio">Mercurio</option>
-                <option value="Venere">Venere</option>
-                <option value="Terra">Terra</option>
-                <option value="Marte">Marte</option>
-                <option value="Saturno">Saturno</option>
-                <option value="Giove">Giove</option>
-                <option value="Urano">Urano</option>
-                <option value="Nettuno">Nettuno</option>
-            </select>
-            <select class="custom-select font-weight-bold mb-1" name="inputArrivo" required>
-                <option value="nessuno" disabled selected hidden>Spazioporto di arrivo</option>
-                <option value="Mercurio">Mercurio</option>
-                <option value="Venere">Venere</option>
-                <option value="Terra">Terra</option>
-                <option value="Marte">Marte</option>
-                <option value="Saturno">Saturno</option>
-                <option value="Giove">Giove</option>
-                <option value="Urano">Urano</option>
-                <option value="Nettuno">Nettuno</option>
-            </select>
-            
-            <select class="custom-select font-weight-bold mb-4" name="inputNavicella" required>
-                <option value="nessuno" disabled selected hidden>Tipo di navicella</option>
-                <option value="Smart">Smart</option>
-                <option value="Comfort">Comfort</option>
-                <option value="Business">Business</option>
-                <option value="Exclusive">Exclusive</option>
-            </select>
+            <div class="input-group mb-1">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm">@&nbsp;Email</i></span>
+                    </div>
+                    <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required autofocus>
+            </div>
+            <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class="material-icons">local_phone</i>&nbsp;Phone</i></span>
+                    </div>
+                    <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required autofocus>
+            </div>
+            <div id="divRemember" class="checkbox mb-3">
+                <input type="checkbox" name="remember"/>
+                <label for="remember">Desidero ricevere promozioni via mail</label>
+            </div>
             <button class="btn btn-lg btn-outline-warning btn-block" type="submit">Prosegui &nbsp; <i class='fas fa-rocket'></i></button>
         </form>
 
