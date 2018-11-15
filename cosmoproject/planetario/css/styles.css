@@ -1139,7 +1139,7 @@ dl.infos dd span:after {
 .hide-UI dl.infos,
 .hide-UI #controls {
   opacity: 0!important;
-  margin-top: -30px; }
+  margin-top: -8%; }
 
 .hide-UI #data {
   margin-bottom: -30px; }
