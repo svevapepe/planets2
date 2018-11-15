@@ -8748,7 +8748,7 @@ button.bg-dark:focus {
 }
 
 .text-justify {
-  text-align: justify !important;
+  text-align: center !important;
 }
 
 .text-nowrap {
