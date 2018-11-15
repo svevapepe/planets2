@@ -1,13 +1,41 @@
 function validaForm(){
-    if (controllaCAP()){
-        if(document.myForm.remember.checked){
-            window.alert("Hai scelto di ricordarti per i prossimi accessi");
-        }
-        else{
-            window.alert("Hai scelto di non ricordarti per i prossimi accessi");
-        }
+
+    var nome=document.myForm2.nome.value;
+    if(!isNaN(parseInt(nome))){
+        window.alert("Il Nome deve essere una Stringa");
+        return false;
+    }
+    var cognome=document.myForm2.cognome.value;
+    if(!isNaN(parseInt(cognome))){
+        window.alert("Il Cognome deve essere una Stringa");
+        return false;
+    }
+    var tel=document.myForm2.phone.value;
+    if(isNaN(parseInt(tel))){
+        window.alert("Il telefono deve essere un numero");
+        return false;
+    }
+    if(document.myForm2.remember.checked){
+        window.alert("Hai scelto di ricordarti per i prossimi accessi");
     }
     else
+        return true;
+}
+function validaNome(){
+    var nome=document.myForm2.nome.value;
+    if(!isNaN(parseInt(nome))){
+        window.alert("Il Nome deve essere una Stringa");
         return false;
+    }
+    return true;
+}
+
+function validaCognome(){
+    var cognome=document.myForm2.cognome.value;
+    if(!isNaN(parseInt(cognome))){
+        window.alert("Il Cognome deve essere una Stringa");
+        return false;
+    }
+    return true;
 }
 
