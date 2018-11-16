@@ -67,33 +67,33 @@
                     <h2 class="section text-uppercase">Inserisci i tuoi dati</h2>
                 </div>
         </section>
-            <form action="https://www.diag.uniroma1.it/~rosati/lw/" class="form-signin " align="center"method="POST" name="myForm" onSubmit="return validaForm()">
+            <form action="#" class="form-signin " align="center"method="POST" name="myForm2" onsubmit="return validaForm();">
             
             <div class="input-group mb-1">
                 <div class="input-group mb-1">
                     <div class="input-group-prepend">
                       <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class="material-icons">person</i>&nbsp;Nome</span>
                     </div>
-                    <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required auto>
+                    <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" name="nome" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required onchange="validaNome();">
             </div>
             <div class="input-group mb-4">
                     <div class="input-group-prepend">
                       <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class="material-icons">person</i>&nbsp;Cognome</span>
                     </div>
-                    <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required autofocus>
+                    <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold"  name="cognome" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required onchange="validaCognome();">
             </div>
 
             <div class="input-group mb-1">
                     <div class="input-group-prepend">
                       <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm">@&nbsp;Email</i></span>
                     </div>
-                    <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required autofocus>
+                    <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" name="email" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
             </div>
             <div class="input-group mb-4">
                     <div class="input-group-prepend">
                       <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class="material-icons">local_phone</i>&nbsp;Phone</i></span>
                     </div>
-                    <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required autofocus>
+                    <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" name="phone" minlength="9" maxlength="10" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required>
             </div>
             
             <div id="divRemember" class="checkbox mb-3">
@@ -123,6 +123,7 @@
         <script src="../../js/jquery.easing.min.js"></script>
         <!-- Custom scripts for this template -->
         <script src="../../js/style.min.js"></script>
+        <script src="js/loginScript.js"></script>
     </body>
 </html>
 
