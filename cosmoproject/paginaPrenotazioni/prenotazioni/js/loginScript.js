@@ -1,19 +1,27 @@
 function validaForm(){
 	var spaPar=document.myForm.inputPartenza.value;
 	var spaArr=document.myForm.inputArrivo.value;
-	var navi=document.myForm.inputNavicella.value;
 	if(spaPar=="nessuno"){
-		window.alert("Scegliere uno Spazioporto di Partenza!");
+		window.alert("Inserire uno Spazioporto di partenza");
 		return false;
 	}
 	if(spaArr=="nessuno"){
-		window.alert("Scegliere uno Spazioporto di Arrivo!");
+		window.alert("Inserire uno Spazioporto di arrivo");
 		return false;
 	}
-	if(navi=="nessuno"){
-		window.alert("Scegliere uno il tipo di navicella");
+	if(spaPar==spaArr){
+		window.alert("Lo Spazioporto di partenza deve essere diverso da quello in arrivo");
 		return false;
 	}
 	alert("Dati inseriti correttamente");
 	return true;
+}
+
+function disabilitaData(){
+	if(document.myForm.customRadioInline1.value=="Andata"){
+        document.myForm.dataArr.disabled=true;
+	}
+	else{
+		document.myForm.dataArr.disabled=false;
+	}
 }
