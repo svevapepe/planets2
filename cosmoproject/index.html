@@ -10,17 +10,21 @@
     <title>Cosmoproject - Home page</title>
 
   
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
-    <link href="css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="css/all.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="https://fontawesome.com/v4.7.0/icon/shopping-cart">
 
     
-    <link href="css/style.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+   
   </head>
 
   <body id="page-top">
@@ -28,7 +32,7 @@
     <!-- Nav-bar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Cosmoproject&nbsp;<i class="fa fa-rocket"></i></a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-family: 'Ubuntu', sans-serif;">Cosmoproject&nbsp;<i class="fa fa-rocket"></i></a>
 
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu
         </button>
@@ -37,7 +41,7 @@
           <ul class="navbar-nav text-uppercase ml-auto">
   
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#destinazioni">Destinazioni</a>
+              <a class="nav-link js-scroll-trigger" href="destinazioni.html">Destinazioni</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="paginaPrenotazioni/prenotazioni/prenotazioni.html">Biglietti</a>
@@ -65,6 +69,34 @@
         </div>
       </div>
     </header>
+    <!--Servizi-->
+    <section id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Servizi</h2>
+            <h3 class="section-subheading text-muted">Con Cosmoproject puoi raggiungere qualunque meta.</h3>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-md-4">
+          <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIuMDAxIDUxMi4wMDEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMi4wMDEgNTEyLjAwMTsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIxMjhweCIgaGVpZ2h0PSIxMjhweCI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTQ5Ny4wODEsMTQuOTE4QzQ4Ni41MzgsNC4zNzUsNDcxLjk2My0xLDQ1Ny4xMTYsMC4xNTRjLTQxLjI5MywzLjIyNC04MS44MjUsMTIuOTI1LTEyMC40NzEsMjguODMzICAgIGMtMzYuNTUyLDE1LjA0NS03Mi4wNTMsMzUuOTA4LTEwNC43OTMsNjIuOTkxYy0xOS42OSwxNi4yODgtMzcuNjEsMzQuMTU5LTUzLjY1NCw1My4zNzkgICAgYy00OS44MDEsMy4yNy05Ny4xNywyNS4xMjMtMTM0LjEyOCw2Mi4wODJjLTE3LjQ4NSwxNy40ODUtMzEuNzY2LDM3Ljc0MS00Mi40NDgsNjAuMjA2Yy0zLjA0Miw2LjM5OS0xLjcyOCwxNC4wMjEsMy4yODIsMTkuMDMgICAgYzMuMjEyLDMuMjEyLDcuNDk2LDQuOTA1LDExLjg0NCw0LjkwNWMyLjQzNSwwLDQuODktMC41MzEsNy4xODYtMS42MjNjMjYuMjEzLTEyLjQ2NCw1NC44MzUtMTguMDg2LDgyLjM4Mi0xNi40MDMgICAgYy0xLjk3NCw1LjgzNy0zLjgyMiwxMS43MjktNS41MzMsMTcuNjc3bC01My40ODksMzIuMDkzYy05LjM0NCw1LjYwNi0xMC45MTQsMTguNTEtMy4yMjUsMjYuMTk5bDI0LjcwMywyNC43MDMgICAgYy03Ljc3NiwxMC4xNzMtMTcuMjYzLDI0LjA1Ni0yNS4zMTYsMzcuOTM4Yy03LjE2OSwxMi4zNTgtMTIuMjk2LDIzLjEzMi0xNS4yNCwzMi4wMjJjLTUuMjExLDE1LjczOC0zLjg2MSwyNy43MTEsNC4wMTIsMzUuNTgzICAgIGM5LjMwNyw5LjMwNywyMi45OTEsOC4xODMsMzUuNTgzLDQuMDEyYzguODg5LTIuOTQ0LDE5LjY2My04LjA3MSwzMi4wMjItMTUuMjRjMTMuODgyLTguMDUyLDI3Ljc2NC0xNy41MzksMzcuOTM4LTI1LjMxNSAgICBsMjQuNzAzLDI0LjcwM2M3LjY2OCw3LjY2OCwyMC41NzEsNi4xNTQsMjYuMTk5LTMuMjI1bDMyLjA5My01My40ODljNS45NDgtMS43MSwxMS44NC0zLjU1OSwxNy42NzgtNS41MzMgICAgYzEuNjgyLDI3LjU0Ni0zLjk0MSw1Ni4xNjgtMTYuNDAzLDgyLjM4MmMtMy4wNDMsNi4zOTktMS43MjgsMTQuMDIxLDMuMjgyLDE5LjAzMWM1LjAxMSw1LjAxLDEyLjYzLDYuMzI0LDE5LjAzMSwzLjI4MiAgICBjMjIuNDY2LTEwLjY4Miw0Mi43MjItMjQuOTY0LDYwLjIwNi00Mi40NDhjMzYuOTU3LTM2Ljk1Nyw1OC44MTItODQuMzI3LDYyLjA4Mi0xMzQuMTI4YzE5LjIyLTE2LjA0MywzNy4wOS0zMy45NjQsNTMuMzc5LTUzLjY1NCAgICBjMjcuMDgzLTMyLjczOSw0Ny45NDQtNjguMjM4LDYyLjk5MS0xMDQuNzkxYzE1LjkwOC0zOC42NDYsMjUuNjA4LTc5LjE3OCwyOC44MzMtMTIwLjQ3MSAgICBDNTEzLjAwNSw0MC4wMjgsNTA3LjYyMywyNS40Niw0OTcuMDgxLDE0LjkxOHogTTU2LjAxMSwyNDQuMDM4YzMuNjk4LTQuNDgzLDcuNjEzLTguNzkyLDExLjc0MS0xMi45MTkgICAgYzIzLjQ2My0yMy40NjMsNTEuOC0zOS43MDksODIuMTUyLTQ3LjQ4MmMtMTEuODgxLDE4LjI1NC0yMi4yNDUsMzcuNDQ2LTMxLjAwNSw1Ny40MzQgICAgQzk4LjIxOSwyMzguNjMzLDc2LjkxNCwyMzkuNjY0LDU2LjAxMSwyNDQuMDM4eiBNODkuNDE3LDQzNS43NTljLTEyLjc5Miw3Ljg0OC0yMS43NywxMi4yMTQtMjcuODE5LDE0LjY0MyAgICBjMi40MjgtNi4wNDksNi43OTUtMTUuMDI3LDE0LjY0My0yNy44MTljNS42Mi05LjE2MSwxMS40ODgtMTcuNzE0LDE2LjQ0Ny0yNC40NDNsMjEuMTcyLDIxLjE3MiAgICBDMTA3LjEzMSw0MjQuMjcxLDk4LjU3Nyw0MzAuMTQsODkuNDE3LDQzNS43NTl6IE0xNzAuOTkyLDQyOS4wODJsLTg4LjA3NC04OC4wNzRsMjkuNjAxLTE3Ljc2MWw3Ni4yMzQsNzYuMjM0TDE3MC45OTIsNDI5LjA4MnogICAgIE0yNjcuOTYxLDQ1NS45ODdjNC4zNzUtMjAuOTAyLDUuNDA2LTQyLjIwOSwyLjk2Ny02Mi44ODZjMTkuOTg4LTguNzYxLDM5LjE4LTE5LjEyNCw1Ny40MzMtMzEuMDA1ICAgIEMzMTguOTIsMzk4Ljk2NCwyOTcuMDY1LDQzMS45ODMsMjY3Ljk2MSw0NTUuOTg3eiBNMjE0LjczLDM3OC4wOTZsLTgwLjgyNy04MC44MjZjMjYuODE3LTkwLjE2Niw4Ny4xNTgtMTY2Ljk0MiwxNjguNzkzLTIxNC41NyAgICBsMTI2LjYwMiwxMjYuNjAyQzM4Mi44MTcsMjg4Ljk3NiwzMDYuOTk4LDM1MC42NTQsMjE0LjczLDM3OC4wOTZ6IE00NzguNDU3LDUyLjI3N2MtMy40NjgsNDQuNDIyLTE0Ljg4Niw4Ni45MDctMzIuOTI1LDEyNS44OTggICAgTDMzMy44MjUsNjYuNDY4YzM4Ljk5MS0xOC4wMzksODEuNDc2LTI5LjQ1NywxMjUuODk4LTMyLjkyNWM1LjE1Ni0wLjQwNiwxMC4wMTMsMS4zOTMsMTMuNjc3LDUuMDU2ICAgIEM0NzcuMDY0LDQyLjI2Myw0NzguODYsNDcuMTIsNDc4LjQ1Nyw1Mi4yNzd6IiBmaWxsPSIjRkZEQTQ0Ii8+Cgk8L2c+CjwvZz4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzQwLjA4NCwxNzEuOTE2Yy0yNi4xNDctMjYuMTQ4LTY4LjU3Ni0yNi4xNS05NC43MjQsMGMtMjYuMTE1LDI2LjExNi0yNi4xMTUsNjguNjA4LDAsOTQuNzI0ICAgIGMyNi4xMTQsMjYuMTE2LDY4LjYwOCwyNi4xMTcsOTQuNzI0LDBDMzY2LjE5OSwyNDAuNTI1LDM2Ni4xOTksMTk4LjAzMSwzNDAuMDg0LDE3MS45MTZ6IE0zMTYuNDAzLDI0Mi45NTkgICAgYy0xMy4wNTgsMTMuMDU3LTM0LjMwNCwxMy4wNTctNDcuMzYzLDBjLTEzLjA1OC0xMy4wNTgtMTMuMDU4LTM0LjMwNCwwLTQ3LjM2M2MxMy4wNTktMTMuMDYsMzQuMzAyLTEzLjA2LDQ3LjM2MiwwICAgIEMzMjkuNDYsMjA4LjY1NCwzMjkuNDYsMjI5LjkwMiwzMTYuNDAzLDI0Mi45NTl6IiBmaWxsPSIjRkZEQTQ0Ii8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
+            <h4 class="service-heading">E-Commerce</h4>
+            <p class="text-muted">Con il nostro portale  di acquisto online, acquistare o prenotare biglietti non è mai stato cosi facile e veloce. Provalo!</p>
+          </div>
+          <div class="col-md-4">
+            <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjEyOHB4IiBoZWlnaHQ9IjEyOHB4IiB2aWV3Qm94PSIwIDAgMzk2LjQ5NCAzOTYuNDk0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAzOTYuNDk0IDM5Ni40OTQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8cGF0aCBkPSJNMzA0LjQyLDMzMC45MDFoLTQzLjIxOWMtMS41NiwwLTIuODM0LTEuMjczLTIuODM0LTIuODM0di0xMC41MmMwLTEuNTU5LTEuMjc1LTIuODM0LTIuODM0LTIuODM0aC02MC40NzUgICBjLTEuNTYsMC0yLjgzNSwxLjI3NS0yLjgzNSwyLjgzNHYxMC41MmMwLDEuNTYxLTEuMjc1LDIuODM0LTIuODM1LDIuODM0aC0zMi40OTFjLTEuNTYsMC0yLjgzNSwxLjI3NS0yLjgzNSwyLjgzNHYxMi4xNyAgIGMwLDEuNTU5LDEuMjc1LDIuODM0LDIuODM1LDIuODM0aDE0Ny41MjFjMS41NTksMCwyLjgzNC0xLjI3NSwyLjgzNC0yLjgzNHYtMTIuMTdDMzA3LjI1NCwzMzIuMTc5LDMwNS45NzksMzMwLjkwMSwzMDQuNDIsMzMwLjkwMSAgIHoiIGZpbGw9IiNGRkRBNDQiLz4KCTxnPgoJCTxwYXRoIGQ9Ik0zNzcuMDMyLDQ2LjM2OGgtMzA4LjRjLTEwLjczLDAtMTkuNDU5LDguNzMtMTkuNDU5LDE5LjQ2MmMwLDAsMCwzNy4xMDksMCw1MC43NjFjMCw2LjcxMS0wLjQ5OCw3LjY2LDQuMDA0LDcuNjYgICAgYzIuMzkxLDAsNS4wMzksMCw3LjcyLDBjMy43NzgsMCwzLjAwMy0wLjk0OSwzLjAwMy03Ljc4NWMwLTEzLjYyMSwwLTUwLjYzNiwwLTUwLjYzNmMwLTIuNTY1LDIuMTY4LTQuNzMzLDQuNzMyLTQuNzMzaDMwOC40ICAgIGMyLjU2MywwLDQuNzMxLDIuMTY4LDQuNzMxLDQuNzMzdjE4OS45OTloLTIxOS44N2MwLDAtNy43NDktMC4wMTQtNy43NDksMTAuMDA2YzAsNS45NDEsMCwxNy44MjMsMCwyMy43NjYgICAgYzAsMTAuMDA2LDgsMTAuMDA2LDgsMTAuMDA2aDIxNC44ODhjMTAuNzI5LDAsMTkuNDYxLTguNzI5LDE5LjQ2MS0xOS40NTlWNjUuODNDMzk2LjQ5Myw1NS4wOTksMzg3Ljc2Myw0Ni4zNjgsMzc3LjAzMiw0Ni4zNjh6ICAgICBNMjIyLjgzMywyODIuODA0Yy00Ljg0NSwwLTguNzcxLTMuOTI2LTguNzcxLTguNzY4czMuOTI2LTguNzcsOC43NzEtOC43N2M0Ljg0LDAsOC43NjcsMy45MjgsOC43NjcsOC43NyAgICBTMjI3LjY3MywyODIuODA0LDIyMi44MzMsMjgyLjgwNHoiIGZpbGw9IiNGRkRBNDQiLz4KCQk8cGF0aCBkPSJNMTI0LjEyNSwxNDEuNjMzSDEyLjU1OUM1LjYzMiwxNDEuNjMzLDAsMTQ3LjI2NiwwLDE1NC4xOTN2MTgzLjM3MmMwLDYuOTI2LDUuNjMyLDEyLjU2MSwxMi41NTksMTIuNTYxaDExMS41NjYgICAgYzYuOTIzLDAsMTIuNTU5LTUuNjM1LDEyLjU1OS0xMi41NjFWMTU0LjE5M0MxMzYuNjg0LDE0Ny4yNjYsMTMxLjA0OCwxNDEuNjMzLDEyNC4xMjUsMTQxLjYzM3ogTTU0LjU4LDE1NC40NDNoMjcuNTIzICAgIGMxLjMxMywwLDIuMzgsMS4wNjQsMi4zOCwyLjM4MWMwLDEuMzE0LTEuMDY2LDIuMzc5LTIuMzgsMi4zNzlINTQuNThjLTEuMzE1LDAtMi4zNzktMS4wNjUtMi4zNzktMi4zNzkgICAgQzUyLjIwMSwxNTUuNTA3LDUzLjI2NSwxNTQuNDQzLDU0LjU4LDE1NC40NDN6IE02OC4xNzUsMzQxLjMwNGMtMy41OSwwLTYuNS0yLjkxLTYuNS02LjVzMi45MS02LjUsNi41LTYuNXM2LjUsMi45MSw2LjUsNi41ICAgIFM3MS43NjUsMzQxLjMwNCw2OC4xNzUsMzQxLjMwNHogTTEyNS44OTMsMzIyLjJjMCwxLjY3Ni0xLjM0MiwzLjA0Ny0yLjk4LDMuMDQ3SDEzLjc3NGMtMS42MzksMC0yLjk4LTEuMzcxLTIuOTgtMy4wNDdWMTY5LjgyNSAgICBjMC0xLjY3NiwxLjM0Mi0zLjA0NiwyLjk4LTMuMDQ2aDEwOS4xMzljMS42MzksMCwyLjk4LDEuMzcxLDIuOTgsMy4wNDZWMzIyLjJ6IiBmaWxsPSIjRkZEQTQ0Ii8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
+            <h4 class="service-heading">Responsive Design</h4>
+            <p class="text-muted">Grazie alla tecnica RWD (Responsive Web Design) da noi utilizzata, puoi visualizzare il nostro sito nel modo ottimale qualunque sia il dispositivo che usi.</p>
+          </div>
+          <div class="col-md-4">
+            <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMS45NDQgNTExLjk0NCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTExLjk0NCA1MTEuOTQ0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjEyOHB4IiBoZWlnaHQ9IjEyOHB4Ij4KPGc+Cgk8Zz4KCQk8Zz4KCQkJPHBhdGggZD0iTTQ4Ni4zNDQsMTcwLjYxOGgtNTMuNTNjLTkuOTIxLTMwLjcxNy0yNi40MTQtNTguOTA1LTQ4LjMzMy04Mi42MDNjLTQwLjk1My00My45OTItOTcuOTY1LTY5LjU0LTE1OC4wNTQtNzAuODI3ICAgICBjLTAuMTE5LDAtMC4yNTYsMC0wLjM2NywwbC00LjI1LTAuMTcxbC00LjE4MSwwLjA4NWMtMC4xMTEsMC0wLjI0NywwLTAuMzY3LDBDMTU3LjE2OCwxOC4zODksMTAwLjE1MSw0My45MzcsNTkuMTkxLDg3LjkzdjAuMDUxICAgICBjLTc4LjkyMiw4NS4wOTgtNzguOTIyLDIxNi42NDEsMCwzMDEuNzM5bDAuMDUxLDAuMDUxYzQwLjk1Niw0My45OTIsOTcuOTcxLDY5LjU0LDE1OC4wNjMsNzAuODI3YzAuMTE5LDAsMC4yNTYsMCwwLjM2NywwICAgICBsNC4xMzksMC4xNTRjMzEuNTc2LDAuMDQ3LDYyLjc5LTYuNzIsOTEuNTExLTE5Ljg0YzE5LjEwNywyMS4xMzcsNDEuNTQyLDM5LjAwOCw2Ni40MTUsNTIuOTA3YzIuNjEsMS40NzksNS44MDQsMS40NzksOC40MTQsMCAgICAgYzEyMi4zODUtNjkuNDk1LDEyMy43OTMtMTgzLjQzMywxMjMuNzkzLTE4OC4yNDVWMTk2LjIxOEM1MTEuOTQ0LDE4Mi4wNzksNTAwLjQ4MywxNzAuNjE4LDQ4Ni4zNDQsMTcwLjYxOHogTTE2Ni4zNDQsNDEuODUgICAgIGMtMjEuNTEyLDIyLjQ3NC0zNy4zMTUsNDkuNzgzLTQ2LjA4LDc5LjYzM2MtMTUuMjg0LTcuNTQ5LTI5LjU2My0xNi45OC00Mi41MDUtMjguMDc1ICAgICBDMTAyLjQ1Niw2OS4wMTEsMTMyLjkzMyw1MS4yNzIsMTY2LjM0NCw0MS44NXogTTY2LjI0LDEwNi4wMjljMTQuODk3LDEyLjgxNSwzMS40MzIsMjMuNTkzLDQ5LjE2OSwzMi4wNTEgICAgIGMtNy45NzksMzAuMTI2LTEyLjI2OSw2MS4xMS0xMi43NzQsOTIuMjcxSDE3LjQxMkMxOS4yNDUsMTg0LjU5OSwzNi40NDcsMTQwLjgsNjYuMjQsMTA2LjAyOXogTTE3LjQxMiwyNDcuNDE4aDg1LjIyMiAgICAgYzAuNTEzLDMxLjE4Nyw0LjgxMSw2Mi4xOTcsMTIuOCw5Mi4zNDhjLTE3LjcxMiw4LjQ3OC0zNC4yMjEsMTkuMjcxLTQ5LjA5MiwzMi4wOTQgICAgIEMzNi40ODQsMzM3LjA3MiwxOS4yNDMsMjkzLjIyNSwxNy40MTIsMjQ3LjQxOHogTTc3LjgyOCwzODQuNDYzYzEyLjkxOC0xMS4wOSwyNy4xNzUtMjAuNTE5LDQyLjQzNi0yOC4wNjYgICAgIGM4Ljc3NiwyOS44MTMsMjQuNTc4LDU3LjA4NCw0Ni4wOCw3OS41MjJDMTMyLjk2Nyw0MjYuNTE3LDEwMi41MTUsNDA4LjgxNCw3Ny44MjgsMzg0LjQ2M3ogTTIxMy4yNzgsNDQyLjg3NCAgICAgYy0zMS4xNjQtNS40NTMtNjAuMTI2LTQwLjQ1Ny03Ny4zNTUtOTMuNTI1YzI0LjY1Ny05Ljg0Myw1MC44MjMtMTUuMzcxLDc3LjM1NS0xNi4zNDFWNDQyLjg3NHogTTIxMy4yNzgsMzE1Ljk2NiAgICAgYy0yOC4wOSwwLjk2NC01NS44MTYsNi42NjgtODIuMDA1LDE2Ljg3Yy03LjE4OC0yNy45MjItMTEuMDcyLTU2LjU5MS0xMS41NzEtODUuNDE5aDkzLjU3N1YzMTUuOTY2eiBNMjEzLjI3OCwxNjEuOTMxdjY4LjQyICAgICBoLTkzLjU3N2MwLjUwMy0yOC43OTgsNC4zNzgtNTcuNDM3LDExLjU0Ni04NS4zMzNjMjYuMTg4LDEwLjIzOSw1My45MjgsMTUuOTQ0LDgyLjAzMSwxNi44N1YxNjEuOTMxeiBNMjEzLjI3OCwxNDQuODIxICAgICBjLTI2LjU0My0wLjk0OS01Mi43MjItNi40ODEtNzcuMzgtMTYuMzVjMTcuMjI5LTUzLjA5NCw0Ni4xOTktODguMTE1LDc3LjM4LTkzLjUzNFYxNDQuODIxeiBNNDE0Ljg5NSwxNzAuNjE4aC03OS40NzkgICAgIGMtMS45LTExLjE5Ni00LjI4OS0yMi4wNDctNy4xNjgtMzIuNTU1YzE3Ljc2OC04LjQ4MSwzNC4zMjgtMTkuMjg4LDQ5LjI0Ni0zMi4xMzcgICAgIEMzOTMuODA4LDEyNS4wMjQsNDA2LjQ4NCwxNDYuOTUsNDE0Ljg5NSwxNzAuNjE4eiBNMzY1LjkwNSw5My40MDhjLTEyLjk0NCwxMS4wOTQtMjcuMjIyLDIwLjUyOC00Mi41MDUsMjguMDgzICAgICBjLTguNzc0LTI5Ljg1OC0yNC41OTItNTcuMTcxLTQ2LjEyMy03OS42NDJDMzEwLjcwNCw1MS4yNjcsMzQxLjE5Niw2OS4wMDYsMzY1LjkwNSw5My40MDh6IE0yMzAuMzQ0LDM0LjkzOCAgICAgYzMxLjE3Miw1LjQ2MSw2MC4xNDMsNDAuNDc0LDc3LjM4LDkzLjU3N2MtMjQuNjYxLDkuODU1LTUwLjg0LDE1LjM3Mi03Ny4zOCwxNi4zMDdWMzQuOTM4eiBNMjMwLjM0NCwxNjEuODg4ICAgICBjMjguMTE3LTAuOTIyLDU1Ljg3Mi02LjYyNyw4Mi4wNzQtMTYuODdjMi4yMDIsOC4zMTEsNC4wODcsMTYuODQ1LDUuNjU4LDI1LjZoLTM2LjUzMWMtMTQuMTM4LDAtMjUuNiwxMS40NjEtMjUuNiwyNS42djM0LjEzMyAgICAgaC0yNS42VjE2MS44ODh6IE0yMzAuMzQ0LDI0Ny40MThoMjUuNnY1OC4xNTVjMC4wNiw0LjI0NSwwLjM0NCw4LjQ4MywwLjg1MywxMi42OThjLTguNzctMS4yNDctMTcuNi0yLjAzLTI2LjQ1My0yLjM0N1YyNDcuNDE4eiAgICAgIE0yMzAuMzQ0LDQ0My40NDVWMzMyLjk2NGM5Ljg0MywwLjM3MywxOS42NTMsMS4zNjQsMjkuMzcyLDIuOTdjNy4wNywzMy4yNTIsMjEuNTI5LDY0LjQ4Nyw0Mi4zMDgsOTEuMzkyICAgICBDMjc5LjMxNyw0MzcuMDM0LDI1NS4wMjIsNDQyLjQ5NywyMzAuMzQ0LDQ0My40NDV6IE00OTQuODc4LDMwNS41NTVjMCw0LjM2OS0xLjYzOCwxMDYuMzk0LTExMC45MzMsMTcwLjk0ICAgICBjLTIzLjYwNC0xMy43MDktNDQuNzA0LTMxLjMzNS02Mi4zOTYtNTIuMTIyYy0wLjEyOC0wLjEyOC0wLjIxMy0wLjI5LTAuMzUtMC40MDFjLTIzLjM5OC0yNy43MTItMzkuMTg3LTYxLjAzMy00NS44MTUtOTYuNjkxICAgICBjLTAuMDQxLTAuMzg4LTAuMTEtMC43NzMtMC4yMDUtMS4xNTJjLTEuMjU2LTYuNzg1LTEuOTgtMTMuNjU5LTIuMTY3LTIwLjU1N1YxOTYuMjE4YzAtNC43MTMsMy44Mi04LjUzMyw4LjUzMy04LjUzM2gyMDQuOCAgICAgYzQuNzEzLDAsOC41MzMsMy44Miw4LjUzMyw4LjUzM1YzMDUuNTU1eiIgZmlsbD0iI0ZGREE0NCIvPgoJCQk8cGF0aCBkPSJNNDYwLjc0NCwyMDQuNzUxYy00LjcxMywwLTguNTMzLDMuODItOC41MzMsOC41MzNzMy44MjEsOC41MzMsOC41MzMsOC41MzN2ODMuNjI3ICAgICBjLTAuMDUxLDMuMjE3LTIuMDgyLDc5LjQ3OS04MS42MDQsMTMzLjY4M2MtMy44OTUsMi42NTMtNC45MDIsNy45NjItMi4yNDksMTEuODU3YzIuNjUzLDMuODk1LDcuOTYyLDQuOTAyLDExLjg1NywyLjI0OSAgICAgYzg2Ljc1OC01OS4xNDUsODkuMDExLTE0My45NDksODkuMDYyLTE0Ny42NjF2LTgzLjc1NUM0NzcuODExLDIxMi4zOTIsNDcwLjE3LDIwNC43NTEsNDYwLjc0NCwyMDQuNzUxeiIgZmlsbD0iI0ZGREE0NCIvPgoJCQk8cGF0aCBkPSJNMzA3LjE0NCwzMDUuNTcydi04My43NTVoOTMuODY3YzQuNzEzLDAsOC41MzMtMy44Miw4LjUzMy04LjUzM3MtMy44Mi04LjUzMy04LjUzMy04LjUzM2gtOTMuODY3ICAgICBjLTkuNDI2LDAtMTcuMDY3LDcuNjQxLTE3LjA2NywxNy4wNjd2ODMuNzU1YzIuMzk4LDM0LjkxMiwxNC44MTIsNjguMzkxLDM1Ljc1NSw5Ni40MjdjMi43NjYsMy44MTcsOC4xMDQsNC42NjksMTEuOTIxLDEuOTAzICAgICBzNC42NjktOC4xMDQsMS45MDMtMTEuOTIxQzMyMC44ODYsMzY2LjgyMSwzMDkuNjE1LDMzNi44NjUsMzA3LjE0NCwzMDUuNTcyeiIgZmlsbD0iI0ZGREE0NCIvPgoJCQk8cGF0aCBkPSJNNDQxLjE3NywyNjUuOTE4Yy0zLjMzMi0zLjMzMS04LjczNC0zLjMzMS0xMi4wNjYsMGwtNjMuMyw2My4zbC05Ljk2Ny05Ljk2N2MtMy4zNDgtMy4yMzQtOC42NzEtMy4xODgtMTEuOTYyLDAuMTA0ICAgICBjLTMuMjkyLDMuMjkyLTMuMzM4LDguNjE0LTAuMTA0LDExLjk2MmwxNiwxNmMzLjMzMiwzLjMzMSw4LjczNCwzLjMzMSwxMi4wNjYsMGw2OS4zMzMtNjkuMzMzICAgICBDNDQ0LjUwOSwyNzQuNjUyLDQ0NC41MDksMjY5LjI1LDQ0MS4xNzcsMjY1LjkxOHoiIGZpbGw9IiNGRkRBNDQiLz4KCQk8L2c+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
+            <h4 class="service-heading">Web Security</h4>
+            <p class="text-muted">Cosmoproject vanta un team di esperti in sicurezza informatica che garantiscono un esperienza piacevole e sicura ai nostri clienti, priva da ogni forma di pirateria.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Team -->
     <section class="bg-light" id="team">
@@ -96,45 +128,7 @@
     </section>
 
     <!-- Contact -->
-    
-    <!--
-     <section id="services">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Servizi</h2>
-            <h3 class="section-subheading text-muted">Con Cosmoproject puoi raggiungere qualunque meta.</h3>
-          </div>
-        </div>
-        <div class="row text-center">
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading">E-Commerce</h4>
-            <p class="text-muted">Con il nostro portale  di acquisto online, acquistare o prenotare biglietti non è mai stato cosi facile e veloce. Provalo!</p>
-          </div>
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading">Responsive Design</h4>
-            <p class="text-muted">Grazie alla tecnica RWD (Responsive Web Design) da noi utilizzata, puoi visualizzare il nostro sito nel modo ottimale qualunque sia il dispositivo che usi.</p>
-          </div>
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading">Web Security</h4>
-            <p class="text-muted">Cosmoproject vanta un team di esperti in sicurezza informatica che garantiscono un esperienza piacevole e sicura ai nostri clienti, priva da ogni forma di pirateria.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  -->
+
 
 
     <!-- Footer -->
@@ -148,333 +142,14 @@
       </div>
     </footer>
 
-<<<<<<< HEAD
-=======
 
-    <!-- Modal 1 -->
-    <div class="destinazioni-modal modal fade" id="destinazioniModal1" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Mercurio</h2>
-                  <br>
-                  <div style="float: left; text-align: center; width: 45%;">
-                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0KBjnNuhRHs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                  </div>
-
-
-                      <div style="float: right; text-align: left; width: 45%;">
-                          Mercurio è il primo pianeta del sistema solare e il più vicino al Sole.
-                          È il più piccolo e la sua orbita è la più eccentrica, ovvero la meno circolare, degli otto pianeti.
-                          Mercurio orbita in senso antiorario, come tutti gli altri pianeti del Sistema Solare, a una distanza media di 0,3871 UA dal Sole con un periodo siderale di 87,969 giorni terrestri.
-
-                          La superficie di Mercurio sperimenta la maggiore escursione termica tra tutti i pianeti, con temperature che vanno da 100 K (-173 °C) della notte a 700 K (427 °C) del dì. 
-
-                          Ciò è dovuto all'assenza dell'atmosfera che se presente svolgerebbe un ruolo nella ridistribuzione del calore.<br>
-                          La superficie fortemente craterizzata indica che Mercurio è geologicamente inattivo da miliardi di anni. 
-                        </div>
-                      <div style="clear: both;">
-                  </div>
-                  <br>
-                  <a class="btn btn-primary" href="paginaPrenotazioni/prenotazioni/prenotazioni.html">Prenota subito</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 2 -->
-    <div class="destinazioni-modal modal fade" id="destinazioniModal2" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase mb-4">Venere</h2>
-                  <div style="float: left; text-align: center; width: 45%;">
-                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BvXa1n9fjow?start=5" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                  </div>
-                      <div style="float: right; text-align: left; width: 45%;">
-                        Venere è il secondo pianeta del Sistema solare in ordine di distanza dal Sole con un'orbita quasi circolare che lo porta a compiere una rivoluzione in 224,7 giorni terrestri.<br>
-                        Con una magnitudine massima di −4,6, è il corpo più luminoso nel cielo notturno dopo la Luna e per questo motivo è conosciuto fin dall'antichità. 
-                        E' un pianeta terrestre ed a volte è definito il "gemello" della Terra, cui è molto simile per dimensioni e massa. Tuttavia è piuttosto differente, infatti Venere possiede un'atmosfera costituita principalmente da anidride carbonica, molto più densa di quella terrestre, con una pressione al livello del suolo pari a 92 atm.
-                        La densità e la composizione dell'atmosfera creano un impressionante effetto serra che rende Venere il pianeta più caldo del sistema solare.
-                      </div>
-                      <div style="clear: both;">
-                  </div>
-                  <br>
-                  <button class="btn btn-primary" type="button"href="paginaPrenotazioni/prenotazioni/prenotazioni.html">Prenota ora</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 3 -->
-    <div class="destinazioni-modal modal fade" id="destinazioniModal3" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase mb-4">Luna</h2>
-                  <div style="float: left; text-align: center; width: 45%;">
-                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6AviDjR9mmo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                  </div>
-                      <div style="float: right; text-align: left; width: 45%;">
-                        La Luna è un satellite naturale, l'unico della Terra.<br>
-                        Orbita a una distanza media di circa 384 400 km dalla Terra, sufficientemente vicina da essere osservabile a occhio nudo, il che rende possibile distinguerne alcuni rilievi sulla superficie.<br>
-                        Essendo in rotazione sincrona rivolge sempre la stessa faccia verso la Terra e il suo lato nascosto è rimasto sconosciuto fino al periodo delle esplorazioni spaziali.<br>
-                        La faccia visibile della Luna è caratterizzata dalla presenza di circa 300 000 crateri da impatto (contando quelli con un diametro di almeno 1 km).<br>
-                        Il cratere lunare più grande è il bacino Polo Sud-Aitken, che ha un diametro di circa 2 500 km, è profondo 13 km e occupa la parte meridionale della faccia nascosta.
-                      </div>
-                      <div style="clear: both;">
-                  </div>
-                  <br>
-                  <button class="btn btn-primary" type="button" >Prenota ora</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 4 -->
-    <div class="destinazioni-modal modal fade" id="destinazioniModal4" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase mb-4">Terra</h2>
-                  <div style="float: left; text-align: center; width: 45%;">
-                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/aU6pxSNDPhs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                  </div>
-                      <div style="float: right; text-align: left; width: 45%;">
-                        La Terra è il terzo pianeta in ordine di distanza dal Sole e il più grande dei pianeti terrestri del sistema solare, sia per massa sia per diametro.<br>
-                        Sulla sua superficie, si trova acqua in tutti e tre gli stati (solido, liquido e gassoso) e un'atmosfera composta in prevalenza d'azoto e ossigeno che, insieme al campo magnetico che avvolge il pianeta, protegge la Terra dai raggi cosmici e dalle radiazioni solari.<br>
-                        Le condizioni atmosferiche primordiali sono state alterate in maniera preponderante dalla presenza di forme di vita che hanno creato un diverso equilibrio ecologico plasmando la superficie del pianeta. Circa il 71% della superficie è coperta da oceani di acqua salata e il restante 29% è rappresentato dai continenti e dalle isole.
-                      </div>
-                      <div style="clear: both;">
-                  </div>
-                  <br>
-                  <button class="btn btn-primary" type="button">Prenota ora</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 5 -->
-    <div class="destinazioni-modal modal fade" id="destinazioniModal5" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase mb-4">Marte</h2>
-                  <div style="float: left; text-align: center; width: 45%;">
-                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/D8pnmwOXhoY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                  
-                  </div>
-                      <div style="float: right; text-align: left; width: 45%;">
-                          Marte è il quarto pianeta del sistema solare in ordine di distanza dal Sole; è visibile ad occhio nudo ed è l'ultimo dei pianeti di tipo terrestre dopo Mercurio, Venere e la Terra. Chiamato il Pianeta rosso a causa del suo colore caratteristico dovuto alle grandi quantità di ossido di ferro che lo ricoprono.<br>
-                          Pur presentando temperature medie superficiali piuttosto basse (tra −120 °C e −14 °C), il pianeta è il più simile alla Terra tra quelli del sistema solare. Le sue dimensioni sono intermedie fra quelle della Terra e della Luna, e presenta un'inclinazione dell'asse di rotazione e durata del giorno simili a quelle terrestri. La sua superficie presenta formazioni vulcaniche, calotte polari e formazioni geologiche che vi suggeriscono la presenza di un'idrosfera in un lontano passato. </div>
-                      <div style="clear: both;">
-                  </div>
-                  <br>
-                  <button class="btn btn-primary" type="button" href="paginaPrenotazioni/prenotazioni/prenotazioni.html">Prenota ora</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 6 -->
-    <div class="destinazioni-modal modal fade" id="destinazioniModal6" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase mb-4">Giove</h2>
-                  <div style="float: left; text-align: center; width: 45%;">
-                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/KlP3pqvp8eI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                  </div>
-                      <div style="float: right; text-align: left; width: 45%;">
-                          Giove è il quinto pianeta del sistema solare in ordine di distanza dal Sole e il più grande di tutto il sistema planetario: la sua massa corrisponde a 2 volte e mezzo la somma di quelle di tutti gli altri pianeti messi insieme. Giove ha una composizione simile a quella del Sole.<br>
-                          A causa delle sue dimensioni e della composizione simile a quella solare, Giove è stato considerato per lungo tempo una "stella fallita": in realtà solamente se avesse avuto l'opportunità di accrescere la propria massa sino a 75-80 volte quella attuale il suo nucleo avrebbe ospitato le condizioni di temperatura e pressione favorevoli all'innesco delle reazioni di fusione dell'idrogeno in elio, il che avrebbe reso il sistema solare un sistema stellare binario. </div>
-                      <div style="clear: both;">
-                  </div>
-                  <br>
-                  <button class="btn btn-primary" type="button">Prenota ora</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 7 -->
-    <div class="destinazioni-modal modal fade" id="destinazioniModal7" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase mb-4">Saturno</h2>
-                  <div style="float: left; text-align: center; width: 45%;">
-                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/epZdZaEQhS0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                  </div>
-                      <div style="float: right; text-align: left; width: 45%;">
-                          Saturno è il sesto pianeta del sistema solare in ordine di distanza dal Sole e il secondo pianeta più massiccio dopo Giove. Con un raggio medio 9,5 volte quello della Terra e una massa 95 volte superiore a quella terrestre Saturno, con Giove, Urano e Nettuno, è classificato come gigante gassoso.<br>
-                          Il nome deriva dall'omonimo dio della mitologia romana, omologo del titano greco Crono. Saturno ha un esteso e vistoso sistema di anelli che consiste principalmente in particelle di ghiaccio e polveri di silicati. Della sessantina di lune conosciute che orbitano intorno al pianeta, Titano è la maggiore ed anche l'unica luna del sistema solare ad avere un'atmosfera significativa.</div>
-                      <div style="clear: both;">
-                  </div>
-                  <br>
-                  <button class="btn btn-primary" type="button">Prenota ora</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 8 -->
-    <div class="destinazioni-modal modal fade" id="destinazioniModal8" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase mb-4">Urano</h2>
-                  <div style="float: left; text-align: center; width: 45%;">
-                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6udH9mjjSXc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                  </div>
-                      <div style="float: right; text-align: left; width: 45%;">
-                          Urano è il settimo pianeta del sistema solare in ordine di distanza dal Sole, il terzo per diametro e il quarto per massa. La composizione chimica di Urano è simile a quella di Nettuno ed entrambi hanno una composizione differente rispetto a Giove e Saturno. Per questa ragione gli astronomi talvolta preferiscono riferirsi a questi due pianeti trattandoli come i "giganti ghiacciati".<br>
-                          Porta il nome del dio greco del cielo Urano, padre di Saturno, a sua volta padre di Giove. Urano possiede un sistema di anelli planetari, una magnetosfera e numerosi satelliti; visti dalla Terra, a causa dell'inclinazione del pianeta, i suoi anelli possono talvolta apparire come un sistema concentrico che circonda il pianeta, oppure possono apparire di taglio.</div>
-                      <div style="clear: both;">
-                  </div>
-                  <br>
-                  <button class="btn btn-primary" type="button">Prenota ora</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 9 -->
-    <div class="destinazioni-modal modal fade" id="destinazioniModal9" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase mb-4">Nettuno</h2>
-                  <div style="float: left; text-align: center; width: 45%;">
-                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/V81wSDe4usY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                  </div>
-                      <div style="float: right; text-align: left; width: 45%;">
-                          Nettuno è l'ottavo e più lontano pianeta del Sistema solare partendo dal Sole. Si tratta del quarto pianeta più grande, considerando il suo diametro, e il terzo se si considera la sua massa. Nettuno ha 17 volte la massa della Terra ed è leggermente più massiccio del suo quasi-gemello Urano, la cui massa è uguale a 15 masse terrestri, ma è meno denso rispetto a Nettuno.<br>
-                          Il nome del pianeta è dedicato al dio romano del mare. <br> Nettuno possiede i venti più forti di ogni altro pianeta nel Sistema Solare. Sono state misurate raffiche a velocità superiori ai 2 100 km/h. La superficie fortemente craterizzata indica che Mercurio è geologicamente inattivo da miliardi di anni. </div>
-                      <div style="clear: both;">
-                  </div>
-                  <br>
-                  <button class="btn btn-primary" type="button">Prenota ora</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
->>>>>>> 35c6790e176f599b0eb458015b489ef6330aefb8
     <!-- Bootstrap core JavaScript -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="js/jquery.easing.min.js"></script>
+    <script type="js/all.js"></script>
 
     <!-- Contact form JavaScript -->
 
