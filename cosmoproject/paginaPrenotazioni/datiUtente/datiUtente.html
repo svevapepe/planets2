@@ -69,40 +69,42 @@
         </section>
             <form action="#" class="form-signin " align="center"method="POST" name="myForm2" onsubmit="return validaForm();">
             
-            <div class="input-group mb-1">
                 <div class="input-group mb-1">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class="material-icons">person</i>&nbsp;Nome</span>
+                    <div class="input-group mb-1">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class="material-icons">person</i>&nbsp;Nome</span>
+                        </div>
+                        <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" name="nome" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required onchange="validaNome();">
                     </div>
-                    <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" name="nome" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required onchange="validaNome();">
-            </div>
-            <div class="input-group mb-4">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class="material-icons">person</i>&nbsp;Cognome</span>
+                    <div class="input-group mb-4">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class="material-icons">person</i>&nbsp;Cognome</span>
+                            </div>
+                            <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold"  name="cognome" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required onchange="validaCognome();">
                     </div>
-                    <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold"  name="cognome" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required onchange="validaCognome();">
-            </div>
 
-            <div class="input-group mb-1">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm">@&nbsp;Email</i></span>
+                    <div class="input-group mb-1">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm">@&nbsp;Email</i></span>
+                        </div>
+                        <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" name="email" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
                     </div>
-                    <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" name="email" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-            </div>
-            <div class="input-group mb-4">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class="material-icons">local_phone</i>&nbsp;Phone</i></span>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class="material-icons">local_phone</i>&nbsp;Phone</i></span>
+                        </div>
+                        <input type="number" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" name="phone" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required>
                     </div>
-                    <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" name="phone" minlength="9" maxlength="10" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required>
-            </div>
             
-            <div id="divRemember" class="checkbox mb-3">
-                <input type="checkbox" name="remember"/>
-                <label for="remember">Desidero ricevere promozioni via mail</label>
-            </div>
+                    <div id="divRemember" class="checkbox mb-3">
+                        <input type="checkbox" name="remember"/>
+                        <label for="remember">Desidero ricevere promozioni via mail</label>
+                    </div>
+                </div>
 
-            <button class="btn btn-lg btn-outline-warning btn-block" type="submit">Prosegui &nbsp; <i class='fas fa-rocket'></i></button>
-        </form>
+                <button class="btn btn-lg btn-outline-warning btn-block" type="submit">Prosegui &nbsp; <i class='fas fa-rocket'></i></button>
+            </form>
+
 
         <footer>
           <div class="container">

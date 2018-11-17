@@ -10,11 +10,6 @@ function validaForm(){
         window.alert("Il Cognome deve essere una Stringa");
         return false;
     }
-    var tel=document.myForm2.phone.value;
-    if(isNaN(parseInt(tel))){
-        window.alert("Il telefono deve essere un numero");
-        return false;
-    }
     if(document.myForm2.remember.checked){
         window.alert("Hai scelto di ricordarti per i prossimi accessi");
     }

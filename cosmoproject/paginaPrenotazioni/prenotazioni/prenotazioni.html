@@ -19,6 +19,7 @@
 
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
 
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -26,6 +27,7 @@
     
     <link href="../../css/style.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
         
     </head>
     <body background= "https://images.wallpaperscraft.com/image/starry_sky_stars_space_120412_1280x720.jpg">
@@ -67,22 +69,32 @@
     </section>
         <form action="../datiUtente/datiUtente.html" class="form-signin " align="center"method="POST" name="myForm" onSubmit="return validaForm()">
             
-            <div class="input-group mb-1">
+            <div class="input-group mb-4">
                     <div class="input-group-prepend">
                       <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class="fa fa-ticket"></i>&nbsp;N° di biglietti (Max 11)</span>
                     </div>
-                    <input type="text" name="biglietti" class="form-control form-control btn-outline-secondary:hovert text-dark font-weight-bold" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required pattern="([0-9])|(1[0-1])">
+                    <input type="text" name="biglietti" class="form-control form-control btn-outline-secondary:hovert text-dark font-weight-bold" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required pattern="([0-9])|(1[0-1])" maxlength="2">
+            </div>
+            <div class="input-group mb-2">
+                 <div class="custom-control custom-radio custom-control-inline">
+                  <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" value="Andata" onclick="return disabilitaData()">
+                  <label class="custom-control-label text-white" for="customRadioInline1">Andata</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" value="AndataRitorno" onclick="return disabilitaData()">
+                  <label class="custom-control-label text-white" for="customRadioInline2">Andata e Ritorno</label>
+                </div>
             </div>
             <div class="input-group mb-4">
                     <div class="input-group-prepend">
                       <span class="input-group-text text-dark font-weight-bold" id=""><i class='far fa-calendar-alt'></i>&nbsp;Data partenza e arrivo</span>
                     </div>
                     <input type="date" name="dataPart"class="form-control btn-outline-secondary:hover text-dark font-weight-bold" required>
-                    <input type="date" name="dataArr" class="form-control btn-outline-secondary:hover text-dark font-weight-bold">
+                    <input type="date" name="dataArr" class="form-control btn-outline-secondary:hover text-dark font-weight-bold" >
             </div>
             
-            <select class="custom-select font-weight-bold mb-1" name="inputPartenza" >
-                <option value="nessuno">Spazioporto di partenza</option>
+            <select class="custom-select font-weight-bold mb-1" name="inputPartenza" required>
+                <option value="nessuno" selected hidden option>Spazioporto di partenza</option>
                 <option value="Mercurio">Mercurio</option>
                 <option value="Venere">Venere</option>
                 <option value="Terra">Terra</option>
@@ -92,8 +104,8 @@
                 <option value="Urano">Urano</option>
                 <option value="Nettuno">Nettuno</option>
             </select>
-            <select class="custom-select font-weight-bold mb-1" name="inputArrivo">
-                <option value="nessuno">Spazioporto di arrivo</option>
+            <select class="custom-select font-weight-bold mb-1" name="inputArrivo" required>
+                <option value="nessuno" selected hidden option>Spazioporto di arrivo </option>
                 <option value="Mercurio">Mercurio</option>
                 <option value="Venere">Venere</option>
                 <option value="Terra">Terra</option>
@@ -105,7 +117,12 @@
             </select>
             
             <select class="custom-select font-weight-bold mb-4" name="inputNavicella" required>
+<<<<<<< HEAD
                 <option value="nessuno" disabled selected hidden>Classe di volo</option>
+=======
+                <option value="nessuno" selected hidden option>Classe di volo</option>
+                <option value="Smart">Smart</option>
+>>>>>>> 35c6790e176f599b0eb458015b489ef6330aefb8
                 <option value="Smart">Economy</option>
                 <option value="Comfort">Comfort</option>
                 <option value="Business">Business</option>
