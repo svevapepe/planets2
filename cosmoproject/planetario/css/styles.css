@@ -1285,7 +1285,8 @@ input[type="button"].btn-block {
   color: #FFF; }
 
 #data a.active {
-  color: #0CF; }
+  color: #ffc107; 
+}
 
 #navbar a {
   position: absolute;
@@ -1319,10 +1320,14 @@ input[type="button"].btn-block {
 .controls-open #controls {
   right: 0px; }
 
+#messaggio{
+  font-size:12px;
+  color: #f8f9fa;
+}
 #data a {
   margin-bottom: 1px;
   padding: 6px 10px;
-  font-size: 18px; }
+  font-size: 30px; }
 
 #controls label {
   opacity: .6;
