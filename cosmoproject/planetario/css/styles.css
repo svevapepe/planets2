@@ -664,7 +664,7 @@ body {
 
 /* --------------------------------------------------------------------------- size */
 .set-size dl.infos dd span:after {
-  content: 'Equatorial Circumference'; }
+  content: 'Circonferenza equatoriale'; }
 
 .set-size #sun dl.infos dd:after {
   content: '4,370,005 km'; }
@@ -695,10 +695,10 @@ body {
 
 /* --------------------------------------------------------------------------- distance */
 .set-distance dl.infos dd span:after {
-  content: 'From Sun'; }
+  content: 'Dal Sole'; }
 
 .set-distance #sun dl.infos dd span:after {
-  content: 'From Earth'; }
+  content: 'Dalla Terra'; }
 
 .set-distance #sun dl.infos dd:after {
   content: '149,598,262 km'; }
