@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -27,7 +29,7 @@
     
     <link href="../../css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    
         
     </head>
     <body background= "https://images.wallpaperscraft.com/image/starry_sky_stars_space_120412_1280x720.jpg">
@@ -45,14 +47,14 @@
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="../../destinazioni.html#destinazioni">Destinazioni</a>
             </li>
+              <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="../../planetario/planetario.html">Planetario</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="prenotazioni.html">Prenota</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="../../index.html#team">Team</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="../../planetario/planetario.html">Planetario</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="../../contatti/contatti.html#contact">Contattaci</a>
@@ -71,9 +73,12 @@
             
             <div class="input-group mb-4">
                     <div class="input-group-prepend">
-                      <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class="fa fa-ticket"></i>&nbsp;N° di biglietti (Max 11)</span>
+                      <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class="fa fa-ticket"></i>&nbsp;N° di biglietti</span>
                     </div>
-                    <input type="text" name="biglietti" class="form-control form-control btn-outline-secondary:hovert text-dark font-weight-bold" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required pattern="([0-9])|(1[0-1])" maxlength="2">
+                    <input type="text" name="biglietti" id="big" class="form-control form-control btn-outline-secondary:hovert text-dark font-weight-bold" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required value="0">
+                    <input type="button" value="+" name="b1" id="bottone" onclick="upanddown(this.value,'biglietti');"/>
+                    <input type="button" value="-" name="b1" id="bottone" onclick="upanddown(this.value,'biglietti');"/>
+                    
             </div>
             <div class="input-group mb-2">
                  <div class="custom-control custom-radio custom-control-inline">
@@ -138,6 +143,7 @@
 
         <script src="../../js/jquery.min.js"></script>
         <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script type="js/incrementa.js"></script>
 
         <!-- Plugin JavaScript -->
         <script src="../../js/jquery.easing.min.js"></script>

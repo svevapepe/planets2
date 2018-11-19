@@ -57,24 +57,32 @@ Form
   padding: 10px;
   font-size: 16px;
 }
+#bottone{
+  width: 3.125em;
+  height:3.125em;
+  border-radius: 1.5625em 1.5625em;
 
+  background-color: #fff;
+  color: #000;
+  
+}
 
 .form-signin .form-control:focus {
   z-index: 2;
 }
-.form-signin input[type="email"] {
+.form-signin input[type="biglietti"] {
 
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+.form-signin input[type="button"] {
+  border-radius: 100%;
+  margin-left: 2%;
 }
 .checkbox {
   color: white;
 }
+
 /*-------------------------------
 Footer
 ------------------------------*/
