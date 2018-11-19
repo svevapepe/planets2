@@ -73,6 +73,11 @@ body {
   font-weight: 300;
   background-color: #08090A; }
 
+/*----messaggio-----
+------------------*/
+
+
+
 #universe {
   z-index: 1;
   position: absolute;
@@ -1321,7 +1326,7 @@ input[type="button"].btn-block {
   right: 0px; }
 
 #messaggio{
-  font-size:12px;
+  font-size:17px;
   color: #f8f9fa;
 }
 #data a {

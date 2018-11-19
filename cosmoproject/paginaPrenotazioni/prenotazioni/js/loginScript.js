@@ -25,3 +25,12 @@ function disabilitaData(){
 		document.myForm.dataArr.disabled=false;
 	}
 }
+function upanddown(op,elemento){
+            var c=document.myForm.elements[elemento];
+            var v=parseInt(c.value);
+            if(isNaN(v)){alert('Inserire un valore numerico nel campo '+c.name+'.'); return;}
+            if(op=='+' && v>=10) {alert('Massimo numero di biglietti che puoi aquistare'); return;}
+            if(op=='+') v++;
+            if(op=='-' && v>0) v--;
+            c.value=v;
+}
