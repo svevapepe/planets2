@@ -74,18 +74,18 @@
                         <div class="input-group-prepend">
                           <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class="fa fa-ticket"></i>&nbsp;N° di biglietti</span>
                         </div>
-                        <input type="text" name="biglietti" id="big" class="form-control form-control btn-outline-secondary:hovert text-dark font-weight-bold" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required value="0">
+                        <input type="text" name="biglietti" id="big" class="form-control form-control btn-outline-secondary:hovert text-dark font-weight-bold" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="0" required >
                         <input type="button" class="ml-4" value="+" name="b1" id="bottone" onclick="upanddown(this.value,'biglietti');"/>
                         <input type="button" value="-" name="b1" id="bottone" onclick="upanddown(this.value,'biglietti');"/>
                         
                 </div>
                 <div class="input-group mb-2">
                      <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" value="Andata" onclick="return disabilitaData()">
+                      <input type="radio" id="customRadioInline1" min="' + (new Date()).toISOString().substring(0,10)" name="customRadioInline1" class="custom-control-input" value="Andata" onclick="return disabilitaData()" >
                       <label class="custom-control-label text-white" for="customRadioInline1">Andata</label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" value="AndataRitorno" onclick="return disabilitaData()">
+                      <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" value="AndataRitorno" onclick="return disabilitaData()" required>
                       <label class="custom-control-label text-white" for="customRadioInline2">Andata e Ritorno</label>
                     </div>
                 </div>
@@ -130,7 +130,7 @@
                 </select>
                 <div class="input-group mb-4">
                     <div class="input-group-prepend">
-                        <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class="fas fa-money-bill-wave"></i>&nbsp;Prezzo </span>
+                        <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class="material-icons">euro_symbol</i>&nbsp;Prezzo </span>
                     </div>
                     <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" name="prezzo" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
                     <button class="btn btn-lg btn-outline-success ml-4" type="button" onclick="return prezzoTotale()">Calcola Prezzo</button>

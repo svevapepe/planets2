@@ -61,26 +61,24 @@
         </div>
       </div>
     </nav>
-    <section id="meta" class="bg-transparent">
-        <div class="col-lg-12 text-center text-warning">
-                <h2 class="section text-uppercase">Pagamento</h2>
+    <section id="meta" class="bg-transparent" style="margin-bottom: -4%;">
+        <div class=" text-center text-warning">
+                <h2 class=" text-uppercase">Pagamento</h2>
         </div>
     </section>
 
-    <form action="#" class="form-signin " align="center" method="POST" name="myForm3"">
+    <form action="#" class="form-signin " align="center" method="POST" name="myForm3" onsubmit="return verifica()">
 
         <div class="container" align="center">
             <aside class="col-sm-6">
                 <article class="card">
-                    <div class="card-body p-4">
+                    <div class="card-body">
 
                         <ul class="nav bg-light nav-pills rounded nav-fill mb-3" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" data-toggle="pill" href="#nav-tab-card">
                                 <i class="fa fa-credit-card"></i> Carta di Credito</a></li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="pill" href="#nav-tab-paypal">
-                                <i class="fab fa-paypal"></i>  Paypal</a></li>
+
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="pill" href="#nav-tab-bank">
                                 <i class="fa fa-university"></i>  Bonifico Bancario</a></li>
@@ -88,11 +86,11 @@
 
                         <div class="tab-content">
                             <div class="tab-pane fade show active" id="nav-tab-card">
-                            <p class="alert alert-success">Some text success or error</p>
+                           
                                 <form role="form">
                                     <div class="form-group">
                                         <label for="username">Intestatario</label>
-                                        <input type="text" class="form-control" name="username" placeholder="" required="">
+                                        <input type="text" class="form-control" name="username" placeholder="" required>
                                     </div> <!-- form-group.// -->
 
                                     <div class="form-group">
@@ -113,8 +111,8 @@
                                         <div class="form-group">
                                             <label><span class="hidden-xs">Scadenza</span> </label>
                                             <div class="input-group">
-                                                <input type="number" class="form-control" placeholder="MM" name="">
-                                                <input type="number" class="form-control" placeholder="YY" name="">
+                                                <input type="number" class="form-control" placeholder="MM" name="MM">
+                                                <input type="number" class="form-control" placeholder="YY" name="YY">
                                             </div>
                                         </div>
                                     </div>
@@ -125,49 +123,31 @@
                                         </div> <!-- form-group.// -->
                                     </div>
                                 </div> <!-- row.// -->
-                                <button class="subscribe btn btn-primary btn-block" type="button"> Conferma  </button>
                                 </form>
                             </div> <!-- tab-pane.// -->
-                            <div class="tab-pane fade" id="nav-tab-paypal">
-                                <p>Paypal è metodo di pagamento online più facile </p>
-                                <p>
-                                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-                                        <input type="hidden" name="cmd" value="_cart" />
-                                        <input type="hidden" name="upload" value="1" />
-                                        <input type="hidden" name="business"
-                                        value="paypal@azienda.com" />
-                                        <input type="hidden" name="item_name_1"
-                                        value="Articolo 1" />
-                                        <input type="hidden" name="amount_1" value="200.00" />
-                                        <input type="hidden" name="amount_2" value="2.00" />
-                                        <input type="submit" value="Acquista ora" />
-                                    </form>
-                                </p>
-                            </div>
                         <div class="tab-pane fade" id="nav-tab-bank">
-                            <p>Bank accaunt details</p>
+                            <p>Dettagli Bonifico</p>
                                 <dl class="param">
-                                   <dt>BANK: </dt>
-                                   <dd> THE WORLD BANK</dd>
+                                   <dt>BANCA: </dt>
+                                   <dd> COSMO BANK</dd>
                                 </dl>
                                 <dl class="param">
-                                    <dt>Accaunt number: </dt>
-                                    <dd> 12345678912345</dd>
+                                    <dt>Numero: </dt>
+                                    <dd> 29182019</dd>
                                 </dl>
                                     <dl class="param">
                                     <dt>IBAN: </dt>
-                                    <dd> 123456789</dd>
+                                    <dd> 19971997</dd>
                                 </dl>
-                                <p><strong>Note:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. </p>
                             </div> <!-- tab-pane.// -->
                         </div> <!-- tab-content .// -->
 
                     </div> <!-- card-body.// -->
                 </article> <!-- card.// -->
 
-
+            <button class="btn btn-lg btn-outline-warning btn-block mt-4" type="submit" >Conferma&nbsp; <i class='fas fa-rocket'></i></button>
             </aside> <!-- col.// -->
+
         </div> <!-- row.// -->
 
     </form>
@@ -190,6 +170,7 @@
         <script src="../../js/jquery.easing.min.js"></script>
         <!-- Custom scripts for this template -->
         <script src="../../js/style.js"></script>
+        <script src="js/verifica.js" ></script>
     </body>
 </html>
 
