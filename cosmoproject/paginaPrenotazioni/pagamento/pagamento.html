@@ -43,10 +43,10 @@
           <ul class="navbar-nav text-uppercase ml-auto">
   
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="../../index.html#destinazioni">Destinazioni</a>
+              <a class="nav-link js-scroll-trigger" href="../../destinazioni.html#destinazioni">Destinazioni</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="prenotazioni.html">Prenota</a>
+              <a class="nav-link js-scroll-trigger" href="../prentazioni/prenotazioni.html">Prenota</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="../../index.html#team">Team</a>
@@ -61,25 +61,107 @@
         </div>
       </div>
     </nav>
-
-    <section id="meta" class="bg-transparent">
-        <div class="col-lg-12 text-center text-warning">
-                <h2 class="section text-uppercase">Pagamento</h2>
+    <section id="meta" class="bg-transparent" style="margin-bottom: -4%;">
+        <div class=" text-center text-warning">
+                <h2 class=" text-uppercase">Pagamento</h2>
         </div>
     </section>
 
+    <form action="#" class="form-signin " align="center" method="POST" name="myForm3" onsubmit="return verifica()">
 
+        <div class="container" align="center">
+            <aside class="col-sm-6">
+                <article class="card">
+                    <div class="card-body">
 
+                        <ul class="nav bg-light nav-pills rounded nav-fill mb-3" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="pill" href="#nav-tab-card">
+                                <i class="fa fa-credit-card"></i> Carta di Credito</a></li>
 
-        <footer>
-          <div class="container">
-            <div class="row">
-              <div class="text-left">
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#nav-tab-bank">
+                                <i class="fa fa-university"></i>  Bonifico Bancario</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="nav-tab-card">
+                           
+                                <form role="form">
+                                    <div class="form-group">
+                                        <label for="username">Intestatario</label>
+                                        <input type="text" class="form-control" name="username" placeholder="" required>
+                                    </div> <!-- form-group.// -->
+
+                                    <div class="form-group">
+                                        <label for="cardNumber">Numero di Carta</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="cardNumber" placeholder="">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text text-muted">
+                                                    <i class="fab fa-cc-visa"></i>   <i class="fab fa-cc-amex"></i>   
+                                                    <i class="fab fa-cc-mastercard"></i> 
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div> <!-- form-group.// -->
+
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <div class="form-group">
+                                            <label><span class="hidden-xs">Scadenza</span> </label>
+                                            <div class="input-group">
+                                                <input type="number" class="form-control" placeholder="MM" name="MM">
+                                                <input type="number" class="form-control" placeholder="YY" name="YY">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label data-toggle="tooltip" title="" data-original-title="3 digits code on back side of the card">CVV <i class="fa fa-question-circle"></i></label>
+                                            <input type="number" class="form-control" required="">
+                                        </div> <!-- form-group.// -->
+                                    </div>
+                                </div> <!-- row.// -->
+                                </form>
+                            </div> <!-- tab-pane.// -->
+                        <div class="tab-pane fade" id="nav-tab-bank">
+                            <p>Dettagli Bonifico</p>
+                                <dl class="param">
+                                   <dt>BANCA: </dt>
+                                   <dd> COSMO BANK</dd>
+                                </dl>
+                                <dl class="param">
+                                    <dt>Numero: </dt>
+                                    <dd> 29182019</dd>
+                                </dl>
+                                    <dl class="param">
+                                    <dt>IBAN: </dt>
+                                    <dd> 19971997</dd>
+                                </dl>
+                            </div> <!-- tab-pane.// -->
+                        </div> <!-- tab-content .// -->
+
+                    </div> <!-- card-body.// -->
+                </article> <!-- card.// -->
+
+            <button class="btn btn-lg btn-outline-warning btn-block mt-4" type="submit" >Conferma&nbsp; <i class='fas fa-rocket'></i></button>
+            </aside> <!-- col.// -->
+
+        </div> <!-- row.// -->
+
+    </form>
+    <br><br>
+        
+    <footer>
+        <div class="container">
+        <div class="row">
+            <div class="text-left">
                 <span class="copyright text-light">Copyright &copy; Progetto LTW 2018</span>
-              </div>
             </div>
-          </div>
-        </footer>
+        </div>
+        </div>
+    </footer>
 
         <script src="../../js/jquery.min.js"></script>
         <script src="../../js/bootstrap.bundle.min.js"></script>
@@ -87,7 +169,8 @@
         <!-- Plugin JavaScript -->
         <script src="../../js/jquery.easing.min.js"></script>
         <!-- Custom scripts for this template -->
-        <script src="../../js/style.min.js"></script>
+        <script src="../../js/style.js"></script>
+        <script src="js/verifica.js" ></script>
     </body>
 </html>
 

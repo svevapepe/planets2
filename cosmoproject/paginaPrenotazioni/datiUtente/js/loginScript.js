@@ -33,4 +33,11 @@ function validaCognome(){
     }
     return true;
 }
-
+function verificaNumero(){
+    var num=document.myForm2.phone.value;
+    if(num<0){
+        window.alert("Il numero non può essere negativo");
+        return false;
+    }
+    return true;
+}
