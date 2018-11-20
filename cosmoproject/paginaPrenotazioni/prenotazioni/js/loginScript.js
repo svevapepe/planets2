@@ -2,7 +2,8 @@ function validaForm(){
 	var spaPar=document.myForm.inputPartenza.value;
 	var spaArr=document.myForm.inputArrivo.value;
 	if(spaPar=="nessuno"){
-		window.alert("Inserire uno Spazioporto di partenza");
+		
+		$(document).off('.alert.data-api');
 		return false;
 	}
 	if(spaArr=="nessuno"){

@@ -21,8 +21,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     
-
-    
     <link href="../../css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
@@ -66,32 +64,34 @@
                     <h2 class="section text-uppercase">Inserisci i tuoi dati</h2>
                 </div>
         </section>
-            <form action="../pagamento/pagamento.html" class="form-signin " align="center"method="POST" name="myForm2" onsubmit="return validaForm();">
+            <form action="../pagamento/pagamento.html" class="form-signin " align="center"method="POST" name="myForm2" novalidate>
                 <div class="container">
                     <div class="input-group mb-1">
                         <div class="input-group-prepend">
                             <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class="material-icons">person</i>&nbsp;Nome</span>
                         </div>
                         <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" name="nome" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required onchange="validaNome();">
+                        <div class="invalid-feedback">Inserisci tuo nome.</div>
                     </div>
                     <div class="input-group mb-4">
                             <div class="input-group-prepend">
                               <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class="material-icons">person</i>&nbsp;Cognome</span>
                             </div>
                             <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold"  name="cognome" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required onchange="validaCognome();">
+                            <div class="invalid-feedback">Inserisci tuo cognome.</div>
                     </div>
 
                     <div class="input-group mb-1">
                         <div class="input-group-prepend">
                             <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm">@&nbsp;Email</i></span>
                         </div>
-                        <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" name="email" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                        <input type="email" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" name="email" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required><div class="invalid-feedback">Inserisci email.</div>
                     </div>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
                             <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm" ><i class="material-icons">local_phone</i>&nbsp;Phone</i></span>
                         </div>
-                        <input type="number" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" name="phone" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required onchange="return verificaNumero()">
+                        <input type="number" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" name="phone" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required onchange="return verificaNumero()"><div class="invalid-feedback">Inserisci numero di telefono.</div>
                     </div>
             
                     <div id="divRemember" class="checkbox mb-3">

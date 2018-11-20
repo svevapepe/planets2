@@ -1,4 +1,4 @@
-function verifica(){
+$(function verifica(){
 	var mese=document.myForm3.MM.value;
 	var anno=document.myForm3.MM.value;
 	var numCart=document.myForm3.cardNumber.value;
@@ -20,4 +20,4 @@ function verifica(){
 		return false;
 	}
 	return true;
-}
+});

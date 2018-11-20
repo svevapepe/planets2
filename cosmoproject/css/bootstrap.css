@@ -2114,8 +2114,11 @@ textarea.form-control {
   display: none;
   width: 100%;
   margin-top: 0.25rem;
-  font-size: 80%;
-  color: #dc3545;
+  text-align: left;
+  font-size: 90%;
+  font-weight: bolder;
+  font-family: 'Michroma', sans-serif;
+  color: #ffc107;
 }
 
 .invalid-tooltip {

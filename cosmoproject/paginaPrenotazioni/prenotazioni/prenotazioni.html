@@ -81,19 +81,20 @@
                 </div>
                 <div class="input-group mb-2">
                      <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="customRadioInline1" min="' + (new Date()).toISOString().substring(0,10)" name="customRadioInline1" class="custom-control-input" value="Andata" onclick="return disabilitaData()" >
+                      <input type="radio" id="customRadioInline1" min="' + (new Date()).toISOString().substring(0,10)" name="customRadioInline1" class="custom-control-input" value="Andata" onclick="return disabilitaData()" required>
                       <label class="custom-control-label text-white" for="customRadioInline1">Andata</label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" value="AndataRitorno" onclick="return disabilitaData()" required>
+                      <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" value="AndataRitorno" onclick="return disabilitaData()">
                       <label class="custom-control-label text-white" for="customRadioInline2">Andata e Ritorno</label>
                     </div>
+
                 </div>
                 <div class="input-group mb-4">
                         <div class="input-group-prepend">
                           <span class="input-group-text text-dark font-weight-bold" id=""><i class='far fa-calendar-alt'></i>&nbsp;Data partenza e arrivo</span>
                         </div>
-                        <input type="date" name="dataPart"class="form-control btn-outline-secondary:hover text-dark font-weight-bold" required>
+                        <input type="date" name="dataPart"class="form-control btn-outline-secondary:hover text-dark font-weight-bold" required> 
                         <input type="date" name="dataArr" class="form-control btn-outline-secondary:hover text-dark font-weight-bold" >
                 </div>
                 
@@ -108,7 +109,7 @@
                     <option value="Giove">Giove</option>
                     <option value="Urano">Urano</option>
                     <option value="Nettuno">Nettuno</option>
-                </select>
+                </select> 
                 <select class="custom-select font-weight-bold mb-1" name="inputArrivo" required onchange="verificaSpaziPorti()">
                     <option value="nessuno" disabled  selected hidden >Spazioporto di arrivo </option>
                     <option value="Mercurio">Mercurio</option>
