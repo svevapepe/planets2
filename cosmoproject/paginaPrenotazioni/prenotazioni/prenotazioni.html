@@ -81,11 +81,11 @@
                 </div>
                 <div class="input-group mb-2">
                      <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="customRadioInline1" min="' + (new Date()).toISOString().substring(0,10)" name="customRadioInline1" class="custom-control-input" value="Andata" onclick="return disabilitaData()" >
+                      <input type="radio" id="customRadioInline1" min="' + (new Date()).toISOString().substring(0,10)" name="customRadioInline1" class="custom-control-input" value="Andata" onclick="ritorno=null ;return disabilitaData()" >
                       <label class="custom-control-label text-white" for="customRadioInline1">Andata</label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" value="AndataRitorno" onclick="return disabilitaData()" required>
+                      <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" value="AndataRitorno" onclick="ritorno=this.value; return disabilitaData();" required>
                       <label class="custom-control-label text-white" for="customRadioInline2">Andata e Ritorno</label>
                     </div>
                 </div>
