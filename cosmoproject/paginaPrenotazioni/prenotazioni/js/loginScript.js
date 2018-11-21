@@ -25,14 +25,7 @@ function verificaSpaziPorti(){
 	return true;
 }
 
-function disabilitaData(){
-	if(document.myForm.customRadioInline1.value=="Andata"){
-        document.myForm.dataArr.disabled=true;
-	}
-	else{
-		document.myForm.dataArr.disabled=false;
-	}
-}
+
 function upanddown(op,elemento){
     var c=document.myForm.elements[elemento];
     var v=parseInt(c.value);
@@ -50,6 +43,12 @@ function prezzoTotale(){
 	// Comfort -> 150
 	// Business -> 200
 	// Exclusive -> 250
+	if(document.myForm.customRadioInline1.value=="Andata"){
+        document.myForm.dataArr.disabled=true;
+	}
+	else{
+		document.myForm.dataArr.disabled=false;
+	}
 	var p_1=400;
 	var p_2=800;
 	var p_3=1200;
