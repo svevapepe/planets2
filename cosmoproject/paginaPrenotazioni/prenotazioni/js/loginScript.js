@@ -13,6 +13,13 @@ function validaForm(){
 		return false;
 	}
 	
+	var data1=document.myForm.dataPart.value;
+	var data2=document.myForm.dataArr.value;
+	if(data2<data1 && ritorno!=null){
+		window.alert("Data non valida");
+		return false;
+	}
+	
 	return true;
 }
 function verificaSpaziPorti(){
