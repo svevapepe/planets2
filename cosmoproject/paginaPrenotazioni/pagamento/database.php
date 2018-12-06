@@ -19,15 +19,28 @@ $link = mysqli_connect('localhost', 'root', 'Spsasc1997');
 if ($link->connect_errno) {
     echo ('Could not connect: ' . mysqli_error());
 }
-echo 'Connected successfully';
+
 
 mysqli_select_db($link,$db_name) or die("Impossibile connettersi al database");
 
-$sql="INSERT INTO biglietto(nome,cognome,email,nbiglietti,datapartenza,dataarrivo,partenza,arrivo) VALUES ('$nome', '$cognome', '$email','$biglietti','$datapar','$dataarr','$spapar','$spaar')";
-if (mysqli_query($link, $sql)) {
-    echo "Inserimento avvenuto correttamente";
-} else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($link);
+$query = "SELECT SUM(nbiglietti) FROM biglietto WHERE datapartenza = '$datapar' and dataarrivo='$dataarr' and partenza='$spapar' and arrivo='$spaar' GROUP BY nbiglietti";
+$result = mysqli_query($link,$query) or die("Impossibile  fare query");
+if($row=mysqli_fetch_assoc($result)){
+  if($row["SUM(nbiglietti)"]<10){
+      //printf("%d\n",$row["SUM(nbiglietti)"]);
+      $sql="INSERT INTO biglietto(nome,cognome,email,nbiglietti,datapartenza,dataarrivo,partenza,arrivo) VALUES ('$nome', '$cognome', '$email','$biglietti','$datapar','$dataarr','$spapar','$spaar')";
+      if (!mysqli_query($link, $sql)) {
+        echo "Error: " . $sql . "<br>" . mysqli_error($link);
+      }
+      printf("Pagamento confermato!");
+  }
+  else{
+      echo "Biglietti non disponibili per questa meta e questa data,ti invitiamo a prenotare per un'altra data!";
+
+  }
+
 }
+
 mysqli_close($link);
+
 ?>
