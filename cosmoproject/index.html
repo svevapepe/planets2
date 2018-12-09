@@ -3,6 +3,7 @@
 
   <head>
     <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -18,11 +19,57 @@
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="https://fontawesome.com/v4.7.0/icon/shopping-cart">
-    <link rel="icon" href="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIuMDAxIDUxMi4wMDEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMi4wMDEgNTEyLjAwMTsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIxMjhweCIgaGVpZ2h0PSIxMjhweCI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTQ5Ny4wODEsMTQuOTE4QzQ4Ni41MzgsNC4zNzUsNDcxLjk2My0xLDQ1Ny4xMTYsMC4xNTRjLTQxLjI5MywzLjIyNC04MS44MjUsMTIuOTI1LTEyMC40NzEsMjguODMzICAgIGMtMzYuNTUyLDE1LjA0NS03Mi4wNTMsMzUuOTA4LTEwNC43OTMsNjIuOTkxYy0xOS42OSwxNi4yODgtMzcuNjEsMzQuMTU5LTUzLjY1NCw1My4zNzkgICAgYy00OS44MDEsMy4yNy05Ny4xNywyNS4xMjMtMTM0LjEyOCw2Mi4wODJjLTE3LjQ4NSwxNy40ODUtMzEuNzY2LDM3Ljc0MS00Mi40NDgsNjAuMjA2Yy0zLjA0Miw2LjM5OS0xLjcyOCwxNC4wMjEsMy4yODIsMTkuMDMgICAgYzMuMjEyLDMuMjEyLDcuNDk2LDQuOTA1LDExLjg0NCw0LjkwNWMyLjQzNSwwLDQuODktMC41MzEsNy4xODYtMS42MjNjMjYuMjEzLTEyLjQ2NCw1NC44MzUtMTguMDg2LDgyLjM4Mi0xNi40MDMgICAgYy0xLjk3NCw1LjgzNy0zLjgyMiwxMS43MjktNS41MzMsMTcuNjc3bC01My40ODksMzIuMDkzYy05LjM0NCw1LjYwNi0xMC45MTQsMTguNTEtMy4yMjUsMjYuMTk5bDI0LjcwMywyNC43MDMgICAgYy03Ljc3NiwxMC4xNzMtMTcuMjYzLDI0LjA1Ni0yNS4zMTYsMzcuOTM4Yy03LjE2OSwxMi4zNTgtMTIuMjk2LDIzLjEzMi0xNS4yNCwzMi4wMjJjLTUuMjExLDE1LjczOC0zLjg2MSwyNy43MTEsNC4wMTIsMzUuNTgzICAgIGM5LjMwNyw5LjMwNywyMi45OTEsOC4xODMsMzUuNTgzLDQuMDEyYzguODg5LTIuOTQ0LDE5LjY2My04LjA3MSwzMi4wMjItMTUuMjRjMTMuODgyLTguMDUyLDI3Ljc2NC0xNy41MzksMzcuOTM4LTI1LjMxNSAgICBsMjQuNzAzLDI0LjcwM2M3LjY2OCw3LjY2OCwyMC41NzEsNi4xNTQsMjYuMTk5LTMuMjI1bDMyLjA5My01My40ODljNS45NDgtMS43MSwxMS44NC0zLjU1OSwxNy42NzgtNS41MzMgICAgYzEuNjgyLDI3LjU0Ni0zLjk0MSw1Ni4xNjgtMTYuNDAzLDgyLjM4MmMtMy4wNDMsNi4zOTktMS43MjgsMTQuMDIxLDMuMjgyLDE5LjAzMWM1LjAxMSw1LjAxLDEyLjYzLDYuMzI0LDE5LjAzMSwzLjI4MiAgICBjMjIuNDY2LTEwLjY4Miw0Mi43MjItMjQuOTY0LDYwLjIwNi00Mi40NDhjMzYuOTU3LTM2Ljk1Nyw1OC44MTItODQuMzI3LDYyLjA4Mi0xMzQuMTI4YzE5LjIyLTE2LjA0MywzNy4wOS0zMy45NjQsNTMuMzc5LTUzLjY1NCAgICBjMjcuMDgzLTMyLjczOSw0Ny45NDQtNjguMjM4LDYyLjk5MS0xMDQuNzkxYzE1LjkwOC0zOC42NDYsMjUuNjA4LTc5LjE3OCwyOC44MzMtMTIwLjQ3MSAgICBDNTEzLjAwNSw0MC4wMjgsNTA3LjYyMywyNS40Niw0OTcuMDgxLDE0LjkxOHogTTU2LjAxMSwyNDQuMDM4YzMuNjk4LTQuNDgzLDcuNjEzLTguNzkyLDExLjc0MS0xMi45MTkgICAgYzIzLjQ2My0yMy40NjMsNTEuOC0zOS43MDksODIuMTUyLTQ3LjQ4MmMtMTEuODgxLDE4LjI1NC0yMi4yNDUsMzcuNDQ2LTMxLjAwNSw1Ny40MzQgICAgQzk4LjIxOSwyMzguNjMzLDc2LjkxNCwyMzkuNjY0LDU2LjAxMSwyNDQuMDM4eiBNODkuNDE3LDQzNS43NTljLTEyLjc5Miw3Ljg0OC0yMS43NywxMi4yMTQtMjcuODE5LDE0LjY0MyAgICBjMi40MjgtNi4wNDksNi43OTUtMTUuMDI3LDE0LjY0My0yNy44MTljNS42Mi05LjE2MSwxMS40ODgtMTcuNzE0LDE2LjQ0Ny0yNC40NDNsMjEuMTcyLDIxLjE3MiAgICBDMTA3LjEzMSw0MjQuMjcxLDk4LjU3Nyw0MzAuMTQsODkuNDE3LDQzNS43NTl6IE0xNzAuOTkyLDQyOS4wODJsLTg4LjA3NC04OC4wNzRsMjkuNjAxLTE3Ljc2MWw3Ni4yMzQsNzYuMjM0TDE3MC45OTIsNDI5LjA4MnogICAgIE0yNjcuOTYxLDQ1NS45ODdjNC4zNzUtMjAuOTAyLDUuNDA2LTQyLjIwOSwyLjk2Ny02Mi44ODZjMTkuOTg4LTguNzYxLDM5LjE4LTE5LjEyNCw1Ny40MzMtMzEuMDA1ICAgIEMzMTguOTIsMzk4Ljk2NCwyOTcuMDY1LDQzMS45ODMsMjY3Ljk2MSw0NTUuOTg3eiBNMjE0LjczLDM3OC4wOTZsLTgwLjgyNy04MC44MjZjMjYuODE3LTkwLjE2Niw4Ny4xNTgtMTY2Ljk0MiwxNjguNzkzLTIxNC41NyAgICBsMTI2LjYwMiwxMjYuNjAyQzM4Mi44MTcsMjg4Ljk3NiwzMDYuOTk4LDM1MC42NTQsMjE0LjczLDM3OC4wOTZ6IE00NzguNDU3LDUyLjI3N2MtMy40NjgsNDQuNDIyLTE0Ljg4Niw4Ni45MDctMzIuOTI1LDEyNS44OTggICAgTDMzMy44MjUsNjYuNDY4YzM4Ljk5MS0xOC4wMzksODEuNDc2LTI5LjQ1NywxMjUuODk4LTMyLjkyNWM1LjE1Ni0wLjQwNiwxMC4wMTMsMS4zOTMsMTMuNjc3LDUuMDU2ICAgIEM0NzcuMDY0LDQyLjI2Myw0NzguODYsNDcuMTIsNDc4LjQ1Nyw1Mi4yNzd6IiBmaWxsPSIjRkZEQTQ0Ii8+Cgk8L2c+CjwvZz4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzQwLjA4NCwxNzEuOTE2Yy0yNi4xNDctMjYuMTQ4LTY4LjU3Ni0yNi4xNS05NC43MjQsMGMtMjYuMTE1LDI2LjExNi0yNi4xMTUsNjguNjA4LDAsOTQuNzI0ICAgIGMyNi4xMTQsMjYuMTE2LDY4LjYwOCwyNi4xMTcsOTQuNzI0LDBDMzY2LjE5OSwyNDAuNTI1LDM2Ni4xOTksMTk4LjAzMSwzNDAuMDg0LDE3MS45MTZ6IE0zMTYuNDAzLDI0Mi45NTkgICAgYy0xMy4wNTgsMTMuMDU3LTM0LjMwNCwxMy4wNTctNDcuMzYzLDBjLTEzLjA1OC0xMy4wNTgtMTMuMDU4LTM0LjMwNCwwLTQ3LjM2M2MxMy4wNTktMTMuMDYsMzQuMzAyLTEzLjA2LDQ3LjM2MiwwICAgIEMzMjkuNDYsMjA4LjY1NCwzMjkuNDYsMjI5LjkwMiwzMTYuNDAzLDI0Mi45NTl6IiBmaWxsPSIjRkZEQTQ0Ii8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
-
 
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+    .flip-card {
+      background-color: transparent;
+      margin-right: 130px;
+      margin-left: 120px;
+      width: 250px;
+      height: 250px;
+    }
+
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    /* Rotazione orizzontale */
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    /* Davanti e dietro */
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+    }
+
+    /* davanti  */
+    .flip-card-front {
+      background-color: transparent;
+      color: black;
+    }
+
+    /* dietro */
+    .flip-card-back {
+      width: 250px;
+      background-color: black;
+      color: #ffc107;
+      transform: rotateY(180deg);
+    }
+
+    </style>
 
 
 
@@ -30,7 +77,9 @@
 
   <body id="page-top">
 
+
     <!-- Nav-bar -->
+
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-family: 'Ubuntu', sans-serif;">Cosmoproject&nbsp;<i class="fa fa-rocket"></i></a>
@@ -69,6 +118,8 @@
       </div>
     </header>
 
+
+
     <!--Servizi-->
     <section id="services">
       <div class="container">
@@ -79,7 +130,7 @@
           </div>
         </div>
         <div class="row text-center">
-          <div class="col-md-4">
+          <div class="main col-md-4" >
           <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ4OS4zIDQ4OS4zIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0ODkuMyA0ODkuMzsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIxMjhweCIgaGVpZ2h0PSIxMjhweCI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTc5LjU1LDIyOS42NzVjLTEwLjIsMTAuMi0xMC4yLDI2LjgsMCwzNy4xYzEwLjIsMTAuMiwyNi44LDEwLjIsMzcuMSwwYzcwLjYtNzAuNiwxODUuNS03MC42LDI1Ni4xLDAgICAgYzUuMSw1LjEsMTEuOCw3LjcsMTguNSw3LjdzMTMuNC0yLjYsMTguNS03LjdjMTAuMi0xMC4yLDEwLjItMjYuOCwwLTM3LjFDMzE4Ljc1LDEzOC41NzUsMTcwLjU1LDEzOC41NzUsNzkuNTUsMjI5LjY3NXoiIGZpbGw9IiNGRkRBNDQiLz4KCQk8cGF0aCBkPSJNMTUwLjM1LDMwMC40NzVjLTEwLjIsMTAuMi0xMC4yLDI2LjgsMCwzNy4xYzEwLjIsMTAuMiwyNi44LDEwLjIsMzcuMSwwYzMxLjUtMzEuNiw4Mi45LTMxLjYsMTE0LjQsMCAgICBjNS4xLDUuMSwxMS44LDcuNywxOC41LDcuN3MxMy40LTIuNiwxOC41LTcuN2MxMC4yLTEwLjIsMTAuMi0yNi44LDAtMzdDMjg2Ljk1LDI0OC40NzUsMjAyLjM1LDI0OC40NzUsMTUwLjM1LDMwMC40NzV6IiBmaWxsPSIjRkZEQTQ0Ii8+CgkJPGNpcmNsZSBjeD0iMjQ0LjY1IiBjeT0iMzk0LjY3NSIgcj0iMzQuOSIgZmlsbD0iI0ZGREE0NCIvPgoJCTxwYXRoIGQ9Ik00ODEuNjUsMTU3LjY3NWMtMTMwLjctMTMwLjYtMzQzLjMtMTMwLjYtNDc0LDBjLTEwLjIsMTAuMi0xMC4yLDI2LjgsMCwzNy4xYzEwLjIsMTAuMiwyNi44LDEwLjIsMzcuMSwwICAgIGMxMTAuMi0xMTAuMywyODkuNi0xMTAuMywzOTkuOSwwYzUuMSw1LjEsMTEuOCw3LjcsMTguNSw3LjdzMTMuNC0yLjYsMTguNS03LjdDNDkxLjg1LDE4NC41NzUsNDkxLjg1LDE2Ny45NzUsNDgxLjY1LDE1Ny42NzV6IiBmaWxsPSIjRkZEQTQ0Ii8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
             <h4 class="service-heading">Wi-fi</h4>
             <p class="text-muted">Sulle nostre Navicelle potrai navigare in internet con il tuo PC, Tablet o Smartphone. Per accedere al servizio basta collegarsi alla rete della navicella ed entrare nel Portale di bordo. Avrai Wifi in tutta la galassia, vieni a provarlo!</p>
@@ -106,28 +157,34 @@
             <h2 class="section-heading text-uppercase">Il Team</h2>
           </div>
         </div>
-        <div class="row">
-          <div class="col-sm-4 col-lg-7">
-            <div class="team-member">
-              <img class="mx-auto rounded-circle" src="immagini/team/simone.png" alt="">
-              <h4>Simone Tedeschi</h4>
-              <p class="text-muted">Studente Ingegneria Informatica</p>
+        <div class="row ml-5 mr-5">
+          <div class="flip-card ">
+            <div class="flip-card-inner ">
+              <div class="team-member flip-card-front">
+                <img class="rounded-circle" src="immagini/team/simone.png" alt="">
+              </div>
+            <div class="flip-card-back rounded-circle text-center">
+                <h4 class="mt-5 mb-5 blockquote">Simone Tedeschi</h4>
+                <p class="text-muted">Studente di Ingegneria Informatica</p>
+            </div>
             </div>
           </div>
-          <div class="col-sm-4">
-            <div class="team-member">
-              <img class="mx-auto rounded-circle" src="immagini/team/sveva.png" alt="">
-              <h4>Sveva Pepe</h4>
-              <p class="text-muted">Studentessa Ingegneria Informatica</p>
+          <div class="flip-card">
+            <div class="flip-card-inner ">
+              <div class="team-member flip-card-front">
+                <img class="rounded-circle" src="immagini/team/sveva.png" alt="">
+              </div>
+              <div class="flip-card-back rounded-circle text-center">
+                <h4 class="mt-5 mb-5 ">Sveva Pepe</h4>
+                <p class="text-muted">Studentessa di Ingegneria Informatica</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="row">
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
+
 
 
 
@@ -146,14 +203,15 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
 
-    <!-- Plugin JavaScript -->
+
     <script src="js/jquery.easing.min.js"></script>
     <script type="js/all.js"></script>
+    <script src="path/jquery.slickmodal.min.js"></script>
 
-    <!-- Contact form JavaScript -->
 
-    <!-- Custom scripts for this template -->
     <script src="js/style.js"></script>
+    
+
 
   </body>
 

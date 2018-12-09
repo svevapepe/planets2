@@ -25,7 +25,7 @@
 
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
@@ -63,7 +63,7 @@
         </div>
       </div>
     </nav>
-
+    
     <section id="meta" class="bg-transparent">
               <div class="col-lg-12 text-center text-warning">
                 <h2 class="section text-uppercase">Biglietti</h2>
@@ -122,7 +122,7 @@
                     <?php if($pianeta=='Saturno') echo('<option value="Mercurio" selected>Saturno</option>')?>
                     <?php if($pianeta=='Giove') echo('<option value="Giove" selected>Giove</option>')?>
                     <?php if($pianeta=='Urano') echo('<option value="Urano" selected>Urano</option>')?>
-                    <?php if($pianeta=='Netturno') echo('<option value="Nettuno" selected>Nettuno</option>')?>
+                    <?php if($pianeta=='Nettuno') echo('<option value="Nettuno" selected>Nettuno</option>')?>
                     <?php if($pianeta=='nessuno') echo('
                       <option value="nessuno"  disabled selected hidden  >Spazioporto di arrivo</option>
                       <option value="Mercurio" >Mercurio</option>
@@ -173,5 +173,8 @@
         <!-- Custom scripts for this template -->
         <script src="../../js/style.js"></script>
         <script src="js/loginScript.js"></script>
+        <script src="js/sweetalert2.min.js"></script>
+
+
     </body>
 </html>

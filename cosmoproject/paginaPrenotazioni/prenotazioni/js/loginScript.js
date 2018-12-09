@@ -1,10 +1,11 @@
+
 var ritorno=null;
 
 function validaForm(){
 	var spaPar=document.myForm.inputPartenza.value;
 	var spaArr=document.myForm.inputArrivo.value;
 	if(spaPar=="nessuno"){
-		
+
 		$(document).off('.alert.data-api');
 		return false;
 	}
@@ -12,14 +13,14 @@ function validaForm(){
 		window.alert("Inserire uno Spazioporto di arrivo");
 		return false;
 	}
-	
+
 	var data1=document.myForm.dataPart.value;
 	var data2=document.myForm.dataArr.value;
 	if(data2<data1 && ritorno!=null){
 		window.alert("Data non valida");
 		return false;
 	}
-	
+
 	return true;
 }
 function verificaSpaziPorti(){

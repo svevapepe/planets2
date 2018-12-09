@@ -55,6 +55,20 @@
         </div>
       </div>
     </nav>
+    <div class="modal fade" id="overlay" style="top:30%; ">
+    <div class="modal-dialog ">
+      <div class="modal-content" style="height:35vh; background:#ffae00;">
+          <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">VIAGGIO OMAGGIO&nbsp;<img src="immagini/loudspeaker.png"></h4>
+          <hr>
+          <p>NON PERDERE L'OCCASIONE!</p>
+          <p>HAI TEMPO SOLO FINO AL 25 DI DICEMBRE!&emsp;<img src="immagini/xmas.png"></p>
+          <p>Prenotando un viaggio per qualunque altro pianeta avrai diritto ad un VIAGGIO COMPLETAMENTE GRATUITO sulla Luna!</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <!-- destinazioni  -->
     <section class="bg-light" id="destinazioni" >
@@ -87,6 +101,7 @@
 
           </div>
           <div class="col-md-4 col-sm-5 destinazioni-item">
+
             <a class="destinazioni-link" data-toggle="modal" href="#destinazioniModal3">
               <div class="destinazioni-hover">
                 <div class="destinazioni-hover-content">
@@ -487,6 +502,13 @@
     <!-- Bootstrap core JavaScript -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+    $('#overlay').modal('show');
+
+          setTimeout(function() {
+          $('#overlay').modal('hide');
+      }, 10000);
+      </script>
 
     <!-- Plugin JavaScript -->
     <script src="js/jquery.easing.min.js"></script>
