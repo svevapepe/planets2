@@ -677,11 +677,7 @@ body {
   content: '126,074 km/h'; }
 
 .set-speed #moon dl.infos dd:after {
-<<<<<<< HEAD
-    content: '0 km/h'; }
-=======
     content: '170,503 km/h'; }
->>>>>>> dcaadff5256759280a97fa3488177a32588b71bc
 
 .set-speed #earth dl.infos dd:after {
   content: '107,218 km/h'; }

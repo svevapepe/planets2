@@ -16,11 +16,7 @@ function validaForm(){
 
 	var data1=document.myForm.dataPart.value;
 	var data2=document.myForm.dataArr.value;
-<<<<<<< HEAD
-	if(data2<data1){
-=======
 	if(data2<data1 && ritorno!=null){
->>>>>>> dcaadff5256759280a97fa3488177a32588b71bc
 		window.alert("Data non valida");
 		return false;
 	}

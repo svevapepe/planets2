@@ -69,11 +69,7 @@
                 <h2 class="section text-uppercase">Biglietti</h2>
             </div>
     </section>
-<<<<<<< HEAD:cosmoproject/paginaPrenotazioni/prenotazioni/prenotazioni.html
-        <form action="../datiUtente/datiUtente.html" class="form-signin " method="POST" name="myForm" onSubmit="return validaForm()">
-=======
         <form action="../datiUtente/datiUtente.php" class="form-signin " align="center"method="POST" name="myForm" onSubmit="return validaForm()">
->>>>>>> dcaadff5256759280a97fa3488177a32588b71bc:cosmoproject/paginaPrenotazioni/prenotazioni/prenotazioni.php
             <div class="container">
                 <div class="input-group mb-4">
                         <div class="input-group-prepend">

@@ -3,7 +3,7 @@ session_start();
 
 $db_host='localhost';
 $db_user='root';
-$db_pass='Spsasc1997';
+$db_pass='Plummo_97';
 $db_name='cosmoproject';
 
 $nome=$_SESSION['nome'];
