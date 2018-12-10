@@ -1,10 +1,11 @@
+
 var ritorno=null;
 
 function validaForm(){
 	var spaPar=document.myForm.inputPartenza.value;
 	var spaArr=document.myForm.inputArrivo.value;
 	if(spaPar=="nessuno"){
-		
+
 		$(document).off('.alert.data-api');
 		return false;
 	}
@@ -15,7 +16,11 @@ function validaForm(){
 
 	var data1=document.myForm.dataPart.value;
 	var data2=document.myForm.dataArr.value;
+<<<<<<< HEAD
 	if(data2<data1){
+=======
+	if(data2<data1 && ritorno!=null){
+>>>>>>> dcaadff5256759280a97fa3488177a32588b71bc
 		window.alert("Data non valida");
 		return false;
 	}

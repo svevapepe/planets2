@@ -50,6 +50,7 @@ jQuery(function($) {
   });
 });
 
+
 jQuery(function($) {
   $('#golink3').click(function() {
       return false;
@@ -103,6 +104,15 @@ $('#golink8').click(function() {
     return false;
 });
 });
+
+jQuery(function($) {
+    $('#golink9').click(function() {
+        return false;
+    }).dblclick(function() {
+        window.location = this.href;
+        return false;
+    });
+  });
 
 
   $(".set-view").click(function() { body.toggleClass("view-3D view-2D"); });

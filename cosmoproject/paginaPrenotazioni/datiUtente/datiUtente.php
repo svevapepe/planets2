@@ -1,3 +1,32 @@
+<?php
+    session_start();
+    $prezzo=$_POST['prezzo'];
+    $_SESSION['pre']=$prezzo;
+
+    $nbiglietti=$_POST['biglietti'];
+    $_SESSION['biglietti']=$nbiglietti;
+    $datap=$_POST['dataPart'];
+    $_SESSION['datapart']=$datap;
+
+
+
+
+    $spapar=$_POST['inputPartenza'];
+    $_SESSION['spar']=$spapar;
+    $spaarr=$_POST['inputArrivo'];
+    $_SESSION['spaarr']=$spaarr;
+
+    if(isset($_POST['dataArr'])){
+      $datar=$_POST['dataArr'];
+      $_SESSION['dataarr']=$datar;
+    }
+    else{
+      $_SESSION['dataarr']='null';
+      echo ($_SESSION['dataarr']);
+    }
+
+?>
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -5,7 +34,7 @@
         <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  
+
     <link href="../../css/bootstrap.css" rel="stylesheet">
     <link href="css/datiUtente.css" rel="stylesheet" type="text/css">
     <title>Cosmoproject - Dati Utente</title>
@@ -20,10 +49,11 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    
+
+
     <link href="../../css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        
+
     </head>
 
     <body background= "https://images.wallpaperscraft.com/image/starry_sky_stars_space_120412_1280x720.jpg">
@@ -38,7 +68,7 @@
 
             <div class="collapse navbar-collapse" id="navbarResponsive">
               <ul class="navbar-nav text-uppercase ml-auto">
-      
+
                 <li class="nav-item">
                   <a class="nav-link js-scroll-trigger" href="../../destinazioni.html#destinazioni">Destinazioni</a>
                 </li>
@@ -46,14 +76,12 @@
                   <a class="nav-link js-scroll-trigger" href="../../planetario/planetario.html">Planetario</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="../prenotazioni/prenotazioni.html">Biglietti</a>
+                  <a class="nav-link js-scroll-trigger" href="../prenotazioni/prenotazioni.php?pianeta=nessuno">Prenota</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link js-scroll-trigger" href="../../index.html#team">Team</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="../../contatti/contatti.html#contact">Contattaci</a>
-                </li>
+
               </ul>
             </div>
           </div>
@@ -65,7 +93,7 @@
                 </div>
         </section>
 
-            <form action="../pagamento/pagamento.html" class="form-signin " align="center"method="POST" name="myForm2" novalidate>
+            <form action="../pagamento/pagamento.php" class="form-signin " align="center" method="POST" name="myForm2" novalidate>
                 <div class="container">
 
                     <div class="input-group mb-1">
@@ -85,18 +113,18 @@
 
                     <div class="input-group mb-1">
                         <div class="input-group-prepend">
-                            <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm">@&nbsp;Email</i></span>
+                            <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm">@&nbsp;Email</span>
                         </div>
-                        <input type="email" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" name="email" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required><div class="invalid-feedback">Inserisci email.</div>
+                        <input type="email" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" name="email" maxlength="255" aria-label="Small" aria-describedby="inputGroup-sizing-sm" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required><div class="invalid-feedback">Inserisci email.</div>
 
                     </div>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
-                            <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class="material-icons">local_phone</i>&nbsp;Phone</i></span>
+                            <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class="material-icons">local_phone</i>&nbsp;Phone</span>
                         </div>
                         <input type="number" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" name="phone" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required onchange="return verificaNumero()"><div class="invalid-feedback">Inserisci numero di telefono.</div>
                     </div>
-            
+
                     <div id="divRemember" class="checkbox mb-3">
                         <input type="checkbox" name="remember"/>
                         <label for="remember">Desidero ricevere promozioni via mail</label>
@@ -126,7 +154,6 @@
         <!-- Custom scripts for this template -->
         <script src="../../js/style.js"></script>
         <script src="js/loginScript.js"></script>
+        
     </body>
 </html>
-
-   
