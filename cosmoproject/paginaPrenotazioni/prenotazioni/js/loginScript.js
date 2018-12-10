@@ -12,7 +12,14 @@ function validaForm(){
 		window.alert("Inserire uno Spazioporto di arrivo");
 		return false;
 	}
-	
+
+	var data1=document.myForm.dataPart.value;
+	var data2=document.myForm.dataArr.value;
+	if(data2<data1){
+		window.alert("Data non valida");
+		return false;
+	}
+
 	return true;
 }
 function verificaSpaziPorti(){
@@ -24,7 +31,6 @@ function verificaSpaziPorti(){
 	}
 	return true;
 }
-
 
 function upanddown(op,elemento){
     var c=document.myForm.elements[elemento];
