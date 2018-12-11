@@ -28,13 +28,10 @@ $query = "SELECT SUM(nbiglietti) FROM biglietto WHERE datapartenza = '$datapar' 
 $result = mysqli_query($link,$query) or die("Impossibile  fare query");
 $row=mysqli_fetch_assoc($result);
 if($row["SUM(nbiglietti)"]<10){
-      printf("%d\n",$row["SUM(nbiglietti)"]);
       $sql="INSERT INTO biglietto(nome,cognome,email,nbiglietti,datapartenza,dataarrivo,partenza,arrivo) VALUES ('$nome', '$cognome', '$email','$biglietti','$datapar','$dataarr','$spapar','$spaar')";
       if (!mysqli_query($link, $sql)) {
         echo "Error: " . $sql . "<br>" . mysqli_error($link);
       }
-      
-      printf("Pagamento confermato!");
   }
   else{
       echo "Biglietti non disponibili per questa meta e questa data,ti invitiamo a prenotare per un'altra data!";
@@ -231,7 +228,19 @@ mysqli_close($link);
         </div>
       </div>
     </nav>
-
+	<div class="modal fade" id="overlay" style="top:30%; ">
+    <div class="modal-dialog ">
+      <div class="modal-content" style="height:35vh; background:#ffae00;">
+          <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">ORDINE EFFETTUATO &nbsp;<img src="immagini/loudspeaker.png"></h4>
+          <hr>
+          <p>Grazie per aver scelto Cosmoproject!</p>
+          <p>A breve riceverai una mail di riepilogo dove potrai rivedere le specifiche del tuo ordine.</p>
+        </div>
+      </div>
+    </div>
+  </div>
     <!-- Header -->
     <header class="masthead">
       <div class="container">
@@ -354,7 +363,13 @@ mysqli_close($link);
 
     <script src="js/style.js"></script>
 
+	<script>
+    $('#overlay').modal('show');
 
+          setTimeout(function() {
+          $('#overlay').modal('hide');
+      }, 10000);
+      </script>
 
   </body>
 

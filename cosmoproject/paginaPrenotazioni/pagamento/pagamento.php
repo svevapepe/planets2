@@ -79,7 +79,7 @@
         </div>
     </section>
 
-    <form action="database.php" class="form-signin text-center" method="POST" name="myForm3" onsubmit="return verifica()">
+    <form action="../../database.php" class="form-signin text-center" method="POST" name="myForm3" onsubmit="return verifica()">
 
         <div class="container" align="center">
             <aside class="col-sm-6">
