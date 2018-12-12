@@ -1,5 +1,6 @@
 
 var ritorno=null;
+var coupon=null;
 
 function validaForm(){
 	var spaPar=document.myForm.inputPartenza.value;
@@ -18,6 +19,10 @@ function validaForm(){
 	var data2=document.myForm.dataArr.value;
 	if(data2<data1 && ritorno!=null){
 		window.alert("Data non valida");
+		return false;
+	}
+	if(!document.myForm.cparea.value.includes(document.myForm.coupon.value) || document.myForm.coupon.value.length!=8){
+		window.alert("a stronzoooo");
 		return false;
 	}
 
@@ -43,6 +48,14 @@ function upanddown(op,elemento){
     c.value=v;
 }
 
+function guid() {
+	function s4() {
+	  return Math.floor((1 + Math.random()) * 0x10000)
+		.toString(16)
+		.substring(1);
+	}
+	return s4() + s4();
+  }
 
 function prezzoTotale(){
 	// 400 min se pianeta vicino (terra-venere)
@@ -50,6 +63,10 @@ function prezzoTotale(){
 	// Comfort -> 150
 	// Business -> 200
 	// Exclusive -> 250
+	if(document.myForm.coupon.value==""){
+		document.myForm.coupon.value=guid();
+		return;
+	}
 	if(document.myForm.customRadioInline1.value=="Andata"){
         document.myForm.dataArr.disabled=true;
 	}

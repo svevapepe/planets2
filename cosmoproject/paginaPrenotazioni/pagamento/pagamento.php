@@ -160,7 +160,7 @@
 
                     </div> <!-- card-body.// -->
                 </article> <!-- card.// -->
-
+            
             <button class="btn btn-lg btn-outline-warning btn-block mt-4" type="submit" >Conferma&nbsp; <i class='fas fa-rocket'></i></button>
             </aside> <!-- col.// -->
 

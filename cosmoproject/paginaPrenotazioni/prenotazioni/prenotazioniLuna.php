@@ -1,6 +1,36 @@
 <?php
+session_start();
     $pianeta=$_GET["pianeta"];
+    
+  
+$db_host='localhost';
+$db_user='root';
+$db_pass='Plummo_97';
+$db_name='cosmoproject';
+
+$nome=$_SESSION['nome'];
+$cognome=$_SESSION['cognome'];
+$email=$_SESSION['email'];
+$biglietti=$_SESSION['biglietti'];
+$datapar=$_SESSION['datapart'];
+$dataarr=$_SESSION['dataarr'];
+$spapar=$_SESSION['spar'];
+$spaar=$_SESSION['spaarr'];
+$coupon=$_SESSION['coup'];
+
+
+$link = mysqli_connect('localhost', 'root', 'Plummo_97');
+
+mysqli_select_db($link,$db_name) or die("Impossibile connettersi al database");
+
+$queryCoup="SELECT coupon FROM biglietto";
+$resultCoup = mysqli_query($link,$queryCoup) or die("Impossibile  fare query");
+
+$var="";
+while ($line=mysqli_fetch_array($resultCoup, MYSQLI_ASSOC)){ foreach ($line as $col_value){$var.="$col_value";}}
+echo $var;
 ?>
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -66,41 +96,28 @@
     
     <section id="meta" class="bg-transparent">
               <div class="col-lg-12 text-center text-warning">
-                <h2 class="section text-uppercase">Biglietti</h2>
+                <h2 class="section text-uppercase">VIAGGIO OMAGGIO SULLA LUNA</h2>
             </div>
     </section>
-        <form action="../datiUtente/datiUtente.php" class="form-signin " align="center"method="POST" name="myForm" onSubmit="return validaForm()">
+        <form action="../datiUtente/datiUtente.php" class="form-signin " method="POST" name="myForm" onSubmit="return validaForm();">
             <div class="container">
                 <div class="input-group mb-4">
                         <div class="input-group-prepend">
                           <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class="fa fa-ticket"></i>&nbsp;N° di biglietti</span>
                         </div>
-                        <input type="text" name="biglietti" id="big" class="form-control form-control btn-outline-secondary:hovert text-dark font-weight-bold" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="0" required >
-                        <input type="button" class="ml-4" value="+" name="b1" id="bottone" onclick="upanddown(this.value,'biglietti'); return prezzoTotale()"/>
-                        <input type="button" value="-" name="b1" id="bottone" onclick="upanddown(this.value,'biglietti'); return prezzoTotale()"/>
-
+                        <input type="text" name="biglietti" id="big" class="form-control form-control btn-outline-secondary:hovert text-dark font-weight-bold" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="2" required readonly>
+                       
                 </div>
-                <div class="input-group mb-2">
-                     <div class="custom-control custom-radio custom-control-inline">
-
-                      <input type="radio" id="customRadioInline1" min=" + (new Date()).toISOString().substring(0,10)" name="customRadioInline1" class="custom-control-input" value="Andata" onclick="ritorno=null ;   return prezzoTotale();" >
-                      <label class="custom-control-label text-white" for="customRadioInline1">Andata</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" value="AndataRitorno" onclick="ritorno=this.value; return  prezzoTotale();" required >
-                      <label class="custom-control-label text-white" for="customRadioInline2" >Andata e Ritorno</label>
-                    </div>
-
-                </div>
+                <input type="text" name="cparea" value="<?php echo $var ?>">
                 <div class="input-group mb-4">
                         <div class="input-group-prepend">
                           <span class="input-group-text text-dark font-weight-bold" id=""><i class='far fa-calendar-alt'></i>&nbsp;Data partenza e ritorno</span>
                         </div>
                         <input type="date" name="dataPart"class="form-control btn-outline-secondary:hover text-dark font-weight-bold" required>
-                        <input type="date" name="dataArr" class="form-control btn-outline-secondary:hover text-dark font-weight-bold" >
+                        <input type="date" name="dataArr" class="form-control btn-outline-secondary:hover text-dark font-weight-bold" required>
                 </div>
 
-                <select class="custom-select font-weight-bold mb-1" name="inputPartenza" onchange="verificaSpaziPorti(); return prezzoTotale()" required>
+                <select class="custom-select font-weight-bold mb-1" name="inputPartenza" onchange="verificaSpaziPorti();" required>
                     <option value="nessuno" disabled selected hidden>Spazioporto di partenza</option>
                     <option value="Mercurio">Mercurio</option>
                     <option value="Venere">Venere</option>
@@ -113,7 +130,7 @@
                     <option value="Nettuno">Nettuno</option>
 
                 </select>
-                <select class="custom-select font-weight-bold mb-1" name="inputArrivo" onchange="verificaSpaziPorti(); return prezzoTotale()" required>
+                <select class="custom-select font-weight-bold mb-1" name="inputArrivo" onchange="verificaSpaziPorti();" required>
                     <?php if($pianeta=='Mercurio') echo('<option value="Mercurio" selected>Mercurio</option>')?>
                     <?php if($pianeta=='Venere') echo('<option value="Venere" selected>Venere</option>')?>
                     <?php if($pianeta=='Luna') echo('<option value="Luna" selected>Luna</option>')?>
@@ -136,25 +153,17 @@
                       <option value="Nettuno">Nettuno</option>') ?>
 
                 </select>
-                <select class="custom-select font-weight-bold mb-3" name="inputNavicella" onchange="return prezzoTotale()" required>
-                    <option value="nessuno" disabled selected hidden>Classe di volo</option>
-                    <option value="Economy">Economy</option>
-                    <option value="Comfort">Comfort</option>
-                    <option value="Business">Business</option>
-                    <option value="Exclusive">Exclusive</option>
+                <select class="custom-select font-weight-bold mb-3" name="inputNavicella" required>
+                    <option value="Exclusive" selected>Exclusive</option>
                 </select>
-                <div class="input-group mb-4">
+                <div class="input-group mb-1">
                     <div class="input-group-prepend">
-                        <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class='fas fa-ticket-alt'></i>&nbsp;COUPON </span>
+                         <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class='fas fa-ticket-alt'></i>&nbsp;COUPON</span>
                     </div>
-                    <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" name="coupon" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm" readonly>
+                    <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" name="coupon" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required>
+                    <div class="invalid-feedback">Inserisci il codice ricevuto.</div>
                 </div>
-                <div class="input-group mb-4">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class="material-icons">euro_symbol</i>&nbsp;Prezzo </span>
-                    </div>
-                    <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" name="prezzo" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm" readonly>
-                </div>
+                <br>
                 <button class="btn btn-lg btn-outline-warning btn-block" type="submit">Prosegui &nbsp; <i class='fas fa-rocket'></i></button>
             </div>
 

@@ -1,15 +1,20 @@
 <?php
     session_start();
-    $prezzo=$_POST['prezzo'];
-    $_SESSION['pre']=$prezzo;
+    if(isset($_POST['prezzo'])){
+      $prezzo=$_POST['prezzo'];
+      $_SESSION['pre']=$prezzo;
+    }
+    else{
+      $_SESSION['pre']='null';
+    }
+
+    $coupon=$_POST['coupon'];
+    $_SESSION['coup']=$coupon;
 
     $nbiglietti=$_POST['biglietti'];
     $_SESSION['biglietti']=$nbiglietti;
     $datap=$_POST['dataPart'];
     $_SESSION['datapart']=$datap;
-
-
-
 
     $spapar=$_POST['inputPartenza'];
     $_SESSION['spar']=$spapar;
@@ -22,7 +27,6 @@
     }
     else{
       $_SESSION['dataarr']='null';
-      echo ($_SESSION['dataarr']);
     }
 
 ?>

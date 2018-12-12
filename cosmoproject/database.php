@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 $db_host='localhost';
@@ -14,21 +15,24 @@ $datapar=$_SESSION['datapart'];
 $dataarr=$_SESSION['dataarr'];
 $spapar=$_SESSION['spar'];
 $spaar=$_SESSION['spaarr'];
+$coupon=$_SESSION['coup'];
+
 
 $link = mysqli_connect('localhost', 'root', 'Plummo_97');
-if ($link->connect_errno) {
-    echo ('Could not connect: ' . mysqli_error());
-}
-
-$admin_email = "-f cosmoproject@yahoo.it";
 
 mysqli_select_db($link,$db_name) or die("Impossibile connettersi al database");
+
+$queryCoup="SELECT coupon FROM biglietto WHERE nome='$nome' and cognome='$cognome' and email='$email' and datapartenza = '$datapar' and dataarrivo='$dataarr' and partenza='$spapar' and arrivo='$spaar'";
+$resultCoup = mysqli_query($link,$queryCoup) or die("Impossibile  fare query");
+$rowCoup=mysqli_fetch_assoc($resultCoup);
+
+$_SESSION['coupon']=$rowCoup["coupon"];
 
 $query = "SELECT SUM(nbiglietti) FROM biglietto WHERE datapartenza = '$datapar' and dataarrivo='$dataarr' and partenza='$spapar' and arrivo='$spaar' GROUP BY nbiglietti";
 $result = mysqli_query($link,$query) or die("Impossibile  fare query");
 $row=mysqli_fetch_assoc($result);
 if($row["SUM(nbiglietti)"]<10){
-      $sql="INSERT INTO biglietto(nome,cognome,email,nbiglietti,datapartenza,dataarrivo,partenza,arrivo) VALUES ('$nome', '$cognome', '$email','$biglietti','$datapar','$dataarr','$spapar','$spaar')";
+      $sql="INSERT INTO biglietto(nome,cognome,email,nbiglietti,datapartenza,dataarrivo,partenza,arrivo,coupon) VALUES ('$nome', '$cognome', '$email','$biglietti','$datapar','$dataarr','$spapar','$spaar','$coupon')";
       if (!mysqli_query($link, $sql)) {
         echo "Error: " . $sql . "<br>" . mysqli_error($link);
       }
@@ -38,6 +42,7 @@ if($row["SUM(nbiglietti)"]<10){
   }
 
 mysqli_close($link);
+
 
 ?>
 
