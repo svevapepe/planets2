@@ -63,19 +63,19 @@
         </div>
       </div>
     </nav>
-    
+
     <section id="meta" class="bg-transparent">
               <div class="col-lg-12 text-center text-warning">
                 <h2 class="section text-uppercase">Biglietti</h2>
             </div>
     </section>
-        <form action="../datiUtente/datiUtente.php" class="form-signin " align="center"method="POST" name="myForm" onSubmit="return validaForm()">
+        <form action="../datiUtente/datiUtente.php" class="form-signin " align="center"method="POST" name="myForm" onsubmit="return validaForm();">
             <div class="container">
                 <div class="input-group mb-4">
                         <div class="input-group-prepend">
                           <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class="fa fa-ticket"></i>&nbsp;N° di biglietti</span>
                         </div>
-                        <input type="text" name="biglietti" id="big" class="form-control form-control btn-outline-secondary:hovert text-dark font-weight-bold" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="0" required >
+                        <input type="text" name="biglietti" id="big" class="form-control form-control btn-outline-secondary:hovert text-dark font-weight-bold" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="1"  >
                         <input type="button" class="ml-4" value="+" name="b1" id="bottone" onclick="upanddown(this.value,'biglietti'); return prezzoTotale()"/>
                         <input type="button" value="-" name="b1" id="bottone" onclick="upanddown(this.value,'biglietti'); return prezzoTotale()"/>
 
@@ -104,7 +104,6 @@
                     <option value="nessuno" disabled selected hidden>Spazioporto di partenza</option>
                     <option value="Mercurio">Mercurio</option>
                     <option value="Venere">Venere</option>
-                    <option value="Luna">Luna</option>
                     <option value="Terra">Terra</option>
                     <option value="Marte">Marte</option>
                     <option value="Saturno">Saturno</option>
@@ -116,7 +115,6 @@
                 <select class="custom-select font-weight-bold mb-1" name="inputArrivo" onchange="verificaSpaziPorti(); return prezzoTotale()" required>
                     <?php if($pianeta=='Mercurio') echo('<option value="Mercurio" selected>Mercurio</option>')?>
                     <?php if($pianeta=='Venere') echo('<option value="Venere" selected>Venere</option>')?>
-                    <?php if($pianeta=='Luna') echo('<option value="Luna" selected>Luna</option>')?>
                     <?php if($pianeta=='Terra') echo('<option value="Terra" selected>Terra</option>')?>
                     <?php if($pianeta=='Marte') echo('<option value="Marte" selected>Marte</option>')?>
                     <?php if($pianeta=='Saturno') echo('<option value="Mercurio" selected>Saturno</option>')?>
@@ -127,7 +125,6 @@
                       <option value="nessuno"  disabled selected hidden  >Spazioporto di arrivo</option>
                       <option value="Mercurio" >Mercurio</option>
                       <option value="Venere">Venere</option>
-                      <option value="Luna">Luna</option>
                       <option value="Terra">Terra</option>
                       <option value="Marte">Marte</option>
                       <option value="Saturno">Saturno</option>
@@ -145,7 +142,7 @@
                 </select>
                 <div class="input-group mb-4">
                     <div class="input-group-prepend">
-                        <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class='fas fa-ticket-alt'></i>&nbsp;COUPON </span>
+                        <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class='fas fa-ticket-alt'></i>&nbsp;Coupon Luna</span>
                     </div>
                     <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" name="coupon" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm" readonly>
                 </div>
@@ -172,7 +169,7 @@
 
         <script src="../../js/jquery.min.js"></script>
         <script src="../../js/bootstrap.bundle.min.js"></script>
-        <script type="js/incrementa.js"></script>
+
 
         <!-- Plugin JavaScript -->
         <script src="../../js/jquery.easing.min.js"></script>

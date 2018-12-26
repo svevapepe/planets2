@@ -2,14 +2,19 @@
 var ritorno=null;
 var coupon=null;
 
+// controlla la form quando viene cliccato tasto conferma
 function validaForm(){
 	var spaPar=document.myForm.inputPartenza.value;
 	var spaArr=document.myForm.inputArrivo.value;
+
+	// controlla inserimento dello Spazioporto di partenza
 	if(spaPar=="nessuno"){
 
 		$(document).off('.alert.data-api');
 		return false;
 	}
+
+	// controlla inserimento dello Spazioporto di arrivo
 	if(spaArr=="nessuno"){
 		window.alert("Inserire uno Spazioporto di arrivo");
 		return false;
@@ -17,17 +22,24 @@ function validaForm(){
 
 	var data1=document.myForm.dataPart.value;
 	var data2=document.myForm.dataArr.value;
+
+	// controlla data partenza deve essere < data di ritorno
 	if(data2<data1 && ritorno!=null){
 		window.alert("Data non valida");
 		return false;
 	}
-	if(!document.myForm.cparea.value.includes(document.myForm.coupon.value) || document.myForm.coupon.value.length!=8){
-		window.alert("a stronzoooo");
+
+	// controllo che il coupon dell'area di testo che ci siamo nascosti sia uguale a quello
+	// che la persona inserisce nell'input text "coupon" e inoltre controllo anche la dimensione
+	if(!document.myForm.cparea.value.includes(document.myForm.coupon.value) || document.myForm.coupon.value.length!=10){
+		window.alert("Coupon non valido");
 		return false;
 	}
 
 	return true;
 }
+
+// verifico che gli Spazioporti debbano essere diversi
 function verificaSpaziPorti(){
 	var spaPar=document.myForm.inputPartenza.value;
 	var spaArr=document.myForm.inputArrivo.value;
@@ -38,41 +50,46 @@ function verificaSpaziPorti(){
 	return true;
 }
 
+// funzione che aumenta o diminuisce numero di biglietti
 function upanddown(op,elemento){
     var c=document.myForm.elements[elemento];
     var v=parseInt(c.value);
     if(isNaN(v)){alert('Inserire un valore numerico nel campo '+c.name+'.'); return;}
 	if(op=='+' && v>=10) {alert('Massimo numero di biglietti: 10'); return;}
 	if(op=='+') v++;
-	if(op=='-' && v>0) v--;
+	if(op=='-' && v>1 ) v--;
     c.value=v;
 }
 
+// funzione generare stringhe casuali
 function guid() {
 	function s4() {
 	  return Math.floor((1 + Math.random()) * 0x10000)
 		.toString(16)
 		.substring(1);
 	}
-	return s4() + s4();
+	return  'x'+s4() + s4()+'a';
   }
 
+
+// funzione calcola prezzo prezzoTotale
+
 function prezzoTotale(){
-	// 400 min se pianeta vicino (terra-venere)
-	// Economy -> 100
-	// Comfort -> 150
-	// Business -> 200
-	// Exclusive -> 250
-	if(document.myForm.coupon.value==""){
-		document.myForm.coupon.value=guid();
-		return;
-	}
+
+	// disabilito casella se è solo Andata o abilito se
+	// viene scelta anche il ritorno
 	if(document.myForm.customRadioInline1.value=="Andata"){
         document.myForm.dataArr.disabled=true;
 	}
 	else{
 		document.myForm.dataArr.disabled=false;
 	}
+
+	if(document.myForm.coupon.value==""){
+		document.myForm.coupon.value=guid();
+		return;
+	}
+
 	var p_1=400;
 	var p_2=800;
 	var p_3=1200;

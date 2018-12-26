@@ -79,7 +79,7 @@
         </div>
     </section>
 
-    <form action="../../database.php" class="form-signin text-center" method="POST" name="myForm3" onsubmit="return verifica()">
+    <form action="../prenotazioni/database.php" class="form-signin text-center" method="POST" name="myForm3" onsubmit="return verifica();">
 
         <div class="container" align="center">
             <aside class="col-sm-6">
@@ -103,7 +103,7 @@
                                     <div class="form-group">
                                         <label for="username">Intestatario</label>
                                         <input type="text" class="form-control" name="username" placeholder="" required>
-                                    </div> <!-- form-group.// -->
+                                    </div>
 
                                     <div class="form-group">
                                         <label for="cardNumber">Numero di Carta</label>
@@ -116,31 +116,31 @@
                                                 </span>
                                             </div>
                                         </div>
-                                    </div> <!-- form-group.// -->
+                                    </div>
 
                                 <div class="row">
                                     <div class="col-sm-8">
                                         <div class="form-group">
                                             <label><span class="hidden-xs">Scadenza</span> </label>
                                             <div class="input-group">
-                                                <input type="number" class="form-control" placeholder="MM" name="MM" required>
-                                                <input type="number" class="form-control" placeholder="YY" name="YY" required>
+                                                <input type="number" class="form-control" placeholder="MM" name="MM" min="1" max="12" required>
+                                                <input type="number" class="form-control" placeholder="YY" name="YY" min="19" required>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="form-group">
                                             <label data-toggle="tooltip" title="" data-original-title="3 digits code on back side of the card">CVV <i class="fa fa-question-circle"></i></label>
-                                            <input type="number" class="form-control" required="">
-                                        </div> <!-- form-group.// -->
+                                            <input type="number" class="form-control" min="101" max="999" required="">
+                                        </div> 
                                     </div>
-                                </div> <!-- row.// -->
+                                </div>
                                  <div class="form-group">
                                         <label for="username"><i class='fas fa-shopping-cart'></i>&nbsp;Carrello</label>
-                                        <input type="text" class="form-control" name="username" placeholder="" value="<?php  echo($_SESSION['pre']); ?>" readonly>
+                                        <input type="text" class="form-control" name="username" placeholder="" value="<?php if($_SESSION['pre']=='null') echo(0); else echo($_SESSION['pre']); ?>" readonly>
                                     </div>
                                 </form>
-                            </div> <!-- tab-pane.// -->
+                            </div>
                         <div class="tab-pane fade" id="nav-tab-bank">
                             <p>Dettagli Bonifico</p>
                                 <dl class="param">
@@ -155,16 +155,16 @@
                                     <dt>IBAN: </dt>
                                     <dd> 19971997</dd>
                                 </dl>
-                            </div> <!-- tab-pane.// -->
-                        </div> <!-- tab-content .// -->
+                            </div>
+                           </div>
 
-                    </div> <!-- card-body.// -->
-                </article> <!-- card.// -->
-            
+                    </div>
+                </article>
+
             <button class="btn btn-lg btn-outline-warning btn-block mt-4" type="submit" >Conferma&nbsp; <i class='fas fa-rocket'></i></button>
-            </aside> <!-- col.// -->
+            </aside>
 
-        </div> <!-- row.// -->
+        </div>
 
     </form>
     <br><br>

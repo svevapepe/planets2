@@ -28,6 +28,47 @@
     else{
       $_SESSION['dataarr']='null';
     }
+    $db_name='cosmoproject';
+    $link = mysqli_connect('localhost', 'root', 'Spsasc1997') or die("Impossibile connettersi al php");
+
+    mysqli_select_db($link,$db_name) or die("Impossibile connettersi al database");
+    if($spaarr=='Luna'){
+      $queryC="SELECT arrivo FROM biglietto WHERE arrivo='Luna' and coupon='$coupon'";
+      $resultC = mysqli_query($link,$queryC);
+      $rowC=mysqli_fetch_assoc($resultC);
+      if($rowC["arrivo"]=='Luna'){
+        echo ("<script LANGUAGE='JavaScript'>
+          window.alert('Coupon già utilizzato!');
+          window.location.href='../prenotazioni/prenotazioniLuna.php?pianeta=Luna';
+          </script>");
+      }
+    }
+    if($_SESSION['dataarr']!='null'){
+
+      $queryB = "SELECT SUM(nbiglietti) FROM biglietto WHERE datapartenza = '$datap' and dataarrivo='$datar' and partenza='$spapar' and arrivo='$spaarr' GROUP BY nbiglietti";
+      $resultB = mysqli_query($link,$queryB) or die("Impossibile  fare query");
+      $row=mysqli_fetch_assoc($resultB);
+      if($row["SUM(nbiglietti)"]+$nbiglietti>10){
+
+        echo ("<script LANGUAGE='JavaScript'>
+          window.alert('Biglietti esauriti per questa data!');
+          window.location.href='../prenotazioni/prenotazioni.php?pianeta=$spaarr';
+          </script>");
+      }
+    }
+    if($_SESSION['dataarr']=='null'){
+      $queryB = "SELECT SUM(nbiglietti) FROM biglietto WHERE datapartenza = '$datap' and partenza='$spapar' and arrivo='$spaarr' GROUP BY nbiglietti";
+      $resultB = mysqli_query($link,$queryB) or die("Impossibile  fare query");
+      $row=mysqli_fetch_assoc($resultB);
+      if($row["SUM(nbiglietti)"]+$nbiglietti>10){
+
+        echo ("<script LANGUAGE='JavaScript'>
+          window.alert('Biglietti esauriti per questa data!');
+          window.location.href='../prenotazioni/prenotazioni.php?pianeta=$spaarr';
+          </script>");
+      }
+
+    }
 
 ?>
 
@@ -129,10 +170,7 @@
                         <input type="number" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" name="phone" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required onchange="return verificaNumero()"><div class="invalid-feedback">Inserisci numero di telefono.</div>
                     </div>
 
-                    <div id="divRemember" class="checkbox mb-3">
-                        <input type="checkbox" name="remember"/>
-                        <label for="remember">Desidero ricevere promozioni via mail</label>
-                    </div>
+
                 </div>
 
                 <button class="btn btn-lg btn-outline-warning btn-block" type="submit">Prosegui &nbsp; <i class='fas fa-rocket'></i></button>
@@ -158,6 +196,6 @@
         <!-- Custom scripts for this template -->
         <script src="../../js/style.js"></script>
         <script src="js/loginScript.js"></script>
-        
+
     </body>
 </html>

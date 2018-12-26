@@ -27,19 +27,14 @@
 
   <body id="page-top">
 
-    <!-- Nav-bar -->
+    <!-- Barra Navigazione -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="index.html#page-top" style="font-family: 'Ubuntu', sans-serif;">Cosmoproject&nbsp;<i class="fa fa-rocket"></i></a>
-
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
 
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#destinazioni">Destinazioni</a>
+              <a class="nav-link js-scroll-trigger" href="#top">Destinazioni</a>
             </li>
             <li class="nav-item">
                   <a class="nav-link js-scroll-trigger" href="planetario/planetario.html">Planetario</a>
@@ -52,26 +47,22 @@
             </li>
 
           </ul>
-        </div>
+
       </div>
     </nav>
-    <div class="modal fade" id="overlay" style="top:30%; ">
-    <div class="modal-dialog ">
-      <div class="modal-content" style="height:45vh; background:#ffae00;">
-          <div class="modal-body">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title">VIAGGIO OMAGGIO&nbsp;<img src="immagini/loudspeaker.png"></h4>
-          <hr>
-          <p>NON PERDERE L'OCCASIONE!</p>
-          <p>HAI TEMPO SOLO FINO AL 25 DI DICEMBRE!&emsp;<img src="immagini/xmas.png"></p>
-          <p>Prenotando un viaggio per qualunque altro pianeta avrai diritto ad un VIAGGIO COMPLETAMENTE GRATUITO sulla Luna!</p>
-        </div>
-      </div>
-    </div>
-  </div>
 
-    <!-- destinazioni  -->
-    <section class="bg-light" id="destinazioni" >
+
+
+    <!-- Card Destinazioni  -->
+    <section class="bg-light" id="destinazioni" style="padding:5% 0;">
+      <div class = "container" style="margin-top:8%;margin-bottom:5%;" align="center" id="top">
+            <div id="records" ></div>
+
+            <p>
+                <input style="width:40%;" type="button" class="btn btn-lg btn-outline-success btn-block" id = "getusers" value="Scopri i pianeti più prenotati!" onclick="return refresh()">
+            </p>
+
+        </div>
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
@@ -187,7 +178,7 @@
     </footer>
 
 
-    <!-- Modal 1 -->
+    <!-- Popup Mercurio -->
     <div class="destinazioni-modal modal fade" id="destinazioniModal1" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -200,7 +191,7 @@
             <div class="row">
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
-                  <!-- Project Details Go Here -->
+
                   <h2 class="text-uppercase">Mercurio</h2>
                   <br>
                   <div style="float: left; text-align: center; width: 45%;">
@@ -226,7 +217,7 @@
       </div>
     </div>
 
-    <!-- Modal 2 -->
+    <!--  Popup Venere -->
     <div class="destinazioni-modal modal fade" id="destinazioniModal2" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -239,7 +230,6 @@
             <div class="row">
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
-                  <!-- Project Details Go Here -->
                   <h2 class="text-uppercase mb-4">Venere</h2>
                   <div style="float: left; text-align: center; width: 45%;">
                     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BvXa1n9fjow?start=5" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -261,7 +251,7 @@
       </div>
     </div>
 
-    <!-- Modal 3 -->
+    <!--  Popup Luna -->
     <div class="destinazioni-modal modal fade" id="destinazioniModal3" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -274,7 +264,6 @@
             <div class="row">
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
-                  <!-- Project Details Go Here -->
                   <h2 class="text-uppercase mb-4">Luna</h2>
                   <div style="float: left; text-align: center; width: 45%;">
                     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6AviDjR9mmo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -298,7 +287,7 @@
       </div>
     </div>
 
-    <!-- Modal 4 -->
+    <!--  Popup Terra -->
     <div class="destinazioni-modal modal fade" id="destinazioniModal4" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -311,7 +300,7 @@
             <div class="row">
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
-                  <!-- Project Details Go Here -->
+
                   <h2 class="text-uppercase mb-4">Terra</h2>
                   <div style="float: left; text-align: center; width: 45%;">
                     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/aU6pxSNDPhs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -333,7 +322,7 @@
       </div>
     </div>
 
-    <!-- Modal 5 -->
+    <!--  Popup Marte -->
     <div class="destinazioni-modal modal fade" id="destinazioniModal5" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -346,7 +335,6 @@
             <div class="row">
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
-                  <!-- Project Details Go Here -->
                   <h2 class="text-uppercase mb-4">Marte</h2>
                   <div style="float: left; text-align: center; width: 45%;">
                     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/D8pnmwOXhoY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -367,7 +355,7 @@
       </div>
     </div>
 
-    <!-- Modal 6 -->
+    <!--  Popup Giove -->
     <div class="destinazioni-modal modal fade" id="destinazioniModal6" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -380,7 +368,6 @@
             <div class="row">
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
-                  <!-- Project Details Go Here -->
                   <h2 class="text-uppercase mb-4">Giove</h2>
                   <div style="float: left; text-align: center; width: 45%;">
                     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/KlP3pqvp8eI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -400,7 +387,7 @@
       </div>
     </div>
 
-    <!-- Modal 7 -->
+    <!--  Popup Saturno -->
     <div class="destinazioni-modal modal fade" id="destinazioniModal7" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -413,7 +400,6 @@
             <div class="row">
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
-                  <!-- Project Details Go Here -->
                   <h2 class="text-uppercase mb-4">Saturno</h2>
                   <div style="float: left; text-align: center; width: 45%;">
                     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/epZdZaEQhS0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -433,7 +419,7 @@
       </div>
     </div>
 
-    <!-- Modal 8 -->
+    <!--  Popup Urano -->
     <div class="destinazioni-modal modal fade" id="destinazioniModal8" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -446,7 +432,6 @@
             <div class="row">
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
-                  <!-- Project Details Go Here -->
                   <h2 class="text-uppercase mb-4">Urano</h2>
                   <div style="float: left; text-align: center; width: 45%;">
                     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6udH9mjjSXc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -466,7 +451,7 @@
       </div>
     </div>
 
-    <!-- Modal 9 -->
+    <!--  Popup Nettuno -->
     <div class="destinazioni-modal modal fade" id="destinazioniModal9" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -479,7 +464,6 @@
             <div class="row">
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
-                  <!-- Project Details Go Here -->
                   <h2 class="text-uppercase mb-4">Nettuno</h2>
                   <div style="float: left; text-align: center; width: 45%;">
                     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/V81wSDe4usY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -499,24 +483,12 @@
       </div>
     </div>
 
-    <!-- Bootstrap core JavaScript -->
+
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script>
-    $('#overlay').modal('show');
-
-          setTimeout(function() {
-          $('#overlay').modal('hide');
-      }, 10000);
-      </script>
-
-    <!-- Plugin JavaScript -->
     <script src="js/jquery.easing.min.js"></script>
-
-    <!-- Contact form JavaScript -->
-
-    <!-- Custom scripts for this template -->
     <script src="js/style.js"></script>
+
 
   </body>
 

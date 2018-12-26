@@ -1,3 +1,6 @@
+*:focus{
+  outline: none;
+}
 body {
   background-color: #000;
   background-size: cover;
@@ -64,7 +67,7 @@ Form
 
   background-color: #fff;
   color: #000;
-  
+
 }
 
 .form-signin .form-control:focus {
@@ -83,7 +86,7 @@ Form
   color: white;
 }
 @media screen and (max-width: 1050px) {
-  
+
 }
 /*-------------------------------
 Footer
@@ -92,7 +95,7 @@ Footer
   margin-top:40px;
   background: #000000;
   padding: 0.5px;
-  color: #fff; 
+  color: #fff;
 }
 .testo{
   margin-top: 10px;
@@ -116,5 +119,5 @@ Footer
 *:after{
   -webkit-box-sizing:border-box;
      -moz-box-sizing:border-box;
-      box-sizing:border-box; 
+      box-sizing:border-box;
 }

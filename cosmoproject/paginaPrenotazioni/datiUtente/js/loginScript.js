@@ -1,3 +1,4 @@
+// controlla la form quando viene inviata
 function validaForm(){
 
     var nome=document.myForm2.nome.value;
@@ -44,10 +45,13 @@ function verificaNumero(){
 (function() {
   'use strict';
   window.addEventListener('load', function() {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+
     var forms = document.getElementsByClassName('form-signin');
-    // Loop over them and prevent submission
+
     var validation = Array.prototype.filter.call(forms, function(form) {
+
+      // addEventListener attacca all' evento "submit"
+      // una funzione che verifica la validità dei campi
       form.addEventListener('submit', function(event) {
         if (form.checkValidity() === false) {
           event.preventDefault();

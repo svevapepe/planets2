@@ -1,25 +1,16 @@
 <?php
 session_start();
     $pianeta=$_GET["pianeta"];
-    
-  
+
+
 $db_host='localhost';
 $db_user='root';
-$db_pass='Plummo_97';
+$db_pass='Spsasc1997';
 $db_name='cosmoproject';
 
-$nome=$_SESSION['nome'];
-$cognome=$_SESSION['cognome'];
-$email=$_SESSION['email'];
-$biglietti=$_SESSION['biglietti'];
-$datapar=$_SESSION['datapart'];
-$dataarr=$_SESSION['dataarr'];
-$spapar=$_SESSION['spar'];
-$spaar=$_SESSION['spaarr'];
-$coupon=$_SESSION['coup'];
 
 
-$link = mysqli_connect('localhost', 'root', 'Plummo_97');
+$link = mysqli_connect('localhost', 'root', 'Spsasc1997');
 
 mysqli_select_db($link,$db_name) or die("Impossibile connettersi al database");
 
@@ -28,7 +19,7 @@ $resultCoup = mysqli_query($link,$queryCoup) or die("Impossibile  fare query");
 
 $var="";
 while ($line=mysqli_fetch_array($resultCoup, MYSQLI_ASSOC)){ foreach ($line as $col_value){$var.="$col_value";}}
-echo $var;
+
 ?>
 
 <!doctype html>
@@ -93,7 +84,7 @@ echo $var;
         </div>
       </div>
     </nav>
-    
+
     <section id="meta" class="bg-transparent">
               <div class="col-lg-12 text-center text-warning">
                 <h2 class="section text-uppercase">VIAGGIO OMAGGIO SULLA LUNA</h2>
@@ -105,10 +96,10 @@ echo $var;
                         <div class="input-group-prepend">
                           <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class="fa fa-ticket"></i>&nbsp;N° di biglietti</span>
                         </div>
-                        <input type="text" name="biglietti" id="big" class="form-control form-control btn-outline-secondary:hovert text-dark font-weight-bold" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="2" required readonly>
-                       
+                        <input type="text" name="biglietti" id="big" class="form-control form-control btn-outline-secondary:hovert text-dark font-weight-bold" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="1" required readonly>
+
                 </div>
-                <input type="text" name="cparea" value="<?php echo $var ?>">
+                <input type="text" name="cparea" value="<?php echo $var ?>" hidden>
                 <div class="input-group mb-4">
                         <div class="input-group-prepend">
                           <span class="input-group-text text-dark font-weight-bold" id=""><i class='far fa-calendar-alt'></i>&nbsp;Data partenza e ritorno</span>
@@ -121,7 +112,6 @@ echo $var;
                     <option value="nessuno" disabled selected hidden>Spazioporto di partenza</option>
                     <option value="Mercurio">Mercurio</option>
                     <option value="Venere">Venere</option>
-                    <option value="Luna">Luna</option>
                     <option value="Terra">Terra</option>
                     <option value="Marte">Marte</option>
                     <option value="Saturno">Saturno</option>
@@ -131,26 +121,9 @@ echo $var;
 
                 </select>
                 <select class="custom-select font-weight-bold mb-1" name="inputArrivo" onchange="verificaSpaziPorti();" required>
-                    <?php if($pianeta=='Mercurio') echo('<option value="Mercurio" selected>Mercurio</option>')?>
-                    <?php if($pianeta=='Venere') echo('<option value="Venere" selected>Venere</option>')?>
+
                     <?php if($pianeta=='Luna') echo('<option value="Luna" selected>Luna</option>')?>
-                    <?php if($pianeta=='Terra') echo('<option value="Terra" selected>Terra</option>')?>
-                    <?php if($pianeta=='Marte') echo('<option value="Marte" selected>Marte</option>')?>
-                    <?php if($pianeta=='Saturno') echo('<option value="Mercurio" selected>Saturno</option>')?>
-                    <?php if($pianeta=='Giove') echo('<option value="Giove" selected>Giove</option>')?>
-                    <?php if($pianeta=='Urano') echo('<option value="Urano" selected>Urano</option>')?>
-                    <?php if($pianeta=='Nettuno') echo('<option value="Nettuno" selected>Nettuno</option>')?>
-                    <?php if($pianeta=='nessuno') echo('
-                      <option value="nessuno"  disabled selected hidden  >Spazioporto di arrivo</option>
-                      <option value="Mercurio" >Mercurio</option>
-                      <option value="Venere">Venere</option>
-                      <option value="Luna">Luna</option>
-                      <option value="Terra">Terra</option>
-                      <option value="Marte">Marte</option>
-                      <option value="Saturno">Saturno</option>
-                      <option value="Giove">Giove</option>
-                      <option value="Urano">Urano</option>
-                      <option value="Nettuno">Nettuno</option>') ?>
+
 
                 </select>
                 <select class="custom-select font-weight-bold mb-3" name="inputNavicella" required>
@@ -158,9 +131,9 @@ echo $var;
                 </select>
                 <div class="input-group mb-1">
                     <div class="input-group-prepend">
-                         <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm"><i class='fas fa-ticket-alt'></i>&nbsp;COUPON</span>
+                         <span class="input-group-text text-dark font-weight-bold" id="inputGroup-sizing-sm" ><i class='fas fa-ticket-alt'></i>&nbsp;COUPON LUNA</span>
                     </div>
-                    <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" name="coupon" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required>
+                    <input type="text" class="form-control form-control btn-outline-secondary:hover text-dark font-weight-bold" placeholder="Inserisci il coupon ricevuto" name="coupon" maxlength="20" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required>
                     <div class="invalid-feedback">Inserisci il codice ricevuto.</div>
                 </div>
                 <br>
